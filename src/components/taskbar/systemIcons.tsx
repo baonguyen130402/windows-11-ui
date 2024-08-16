@@ -4,6 +4,7 @@ import { swap } from "@formkit/drag-and-drop";
 
 export function SystemIcons() {
   const [parent, icons] = useDragAndDrop([
+    <Icons.lineAngleUp />,
     <Icons.wifi />,
     <Icons.speaker />,
   ], { group: "parent", plugins: [swap()] });
