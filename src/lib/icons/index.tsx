@@ -1102,6 +1102,8 @@ export const Icons = {
       viewBox="0 0 122.88 94.72"
       fill="white"
       xmlSpace="preserve"
+      width="16px"
+      height="16px"
       {...props}
     >
       <g>
@@ -1133,6 +1135,9 @@ export const Icons = {
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 122.88 96.65"
+      width="16px"
+      height="16px"
+      fill="white"
       {...props}
     >
       <title>sound</title>
