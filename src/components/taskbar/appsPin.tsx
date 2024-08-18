@@ -1,30 +1,26 @@
 import { useDragAndDrop } from "@formkit/drag-and-drop/react";
+import { animations } from "@formkit/drag-and-drop";
+
 import { Icons } from "../../lib/icons";
-import { swap } from "@formkit/drag-and-drop";
+import { useState } from "react";
 
 export function AppsPin() {
-  const [parent, icons] = useDragAndDrop([
-    <Icons.copilot className="size-6" />,
-    <Icons.firefox className="size-6" />,
-  ], { group: "parent", plugins: [swap()] });
+  const [parent, icons] = useDragAndDrop<HTMLUListElement, any>([
+    <Icons.copilot className="size-8" />,
+    <Icons.firefox className="size-7 pt-[1px]" />,
+    <Icons.msEdge className="size-8" />,
+    <Icons.folder className="size-8" />,
+  ], { plugins: [animations()] });
   return (
-    <section className="flex items-center gap-x-2">
-      <div className="hover:bg-slate-400 hover:rounded-sm bg-transparent flex items-center justify-center hover:w-8 hover:h-8 w-8 h-8">
-        <Icons.windows className="size-5" />
-      </div>
-      <div className="hover:bg-slate-400 hover:rounded-sm bg-transparent flex items-center justify-center hover:w-8 hover:h-8 w-8 h-8">
-        <Icons.search className="size-5" />
-      </div>
-      <ul className="flex items-center gap-x-4" ref={parent}>
-        {icons.map((icon: any, id: number) => (
-          <li
-            className="hover:bg-slate-400 hover:rounded-sm bg-transparent flex items-center justify-center hover:w-8 hover:h-8 w-8 h-8"
-            key={id}
-          >
-            {icon}
-          </li>
-        ))}
-      </ul>
-    </section>
+    <ul className="flex items-center gap-x-1" ref={parent}>
+      {icons.map((icon: any, id: number) => (
+        <li
+          key={id}
+          className="p-1 hover:bg-[rgba(255,255,255,.15)] hover:rounded-[0.25rem] flex items-center justify-center hover:w-10 hover:h-10 w-10 h-10"
+        >
+          {icon}
+        </li>
+      ))}
+    </ul>
   );
 }
