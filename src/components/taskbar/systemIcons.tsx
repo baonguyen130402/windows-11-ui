@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Icons } from "../../lib/icons";
 import { Card, CardHeader, CardTitle } from "../../lib/components/ui/card";
-import {  useState } from "react";
+import { useState } from "react";
 
 export function Modal(props: any) {
   const { isOpen } = props;
