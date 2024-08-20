@@ -16,6 +16,7 @@ const IconsArr = [
 
 export function Desktop() {
   const [parent, icons] = useDragAndDrop<HTMLUListElement, any>(IconsArr, {
+    group: "parent",
     plugins: [swap()],
   });
 
