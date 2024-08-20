@@ -2,13 +2,22 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
+    // gridTemplateRows: {
+    //   "24": "repeat(24, minmax(0, 1fr))",
+    // },
+    gridTemplateColumns: {
+      "12": "repeat(12, minmax(0, 1fr))",
+      "15": "repeat(15, minmax(0, 1fr))",
+      "18": "repeat(18, minmax(0, 1fr))",
+      "24": "repeat(24, minmax(0, 1fr))",
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -74,4 +83,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
