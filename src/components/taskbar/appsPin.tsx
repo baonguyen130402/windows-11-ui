@@ -2,7 +2,6 @@ import { useDragAndDrop } from "@formkit/drag-and-drop/react";
 import { animations } from "@formkit/drag-and-drop";
 
 import { Icons } from "../../lib/icons";
-import { useState } from "react";
 
 export function AppsPin() {
   const [parent, icons] = useDragAndDrop<HTMLUListElement, any>([

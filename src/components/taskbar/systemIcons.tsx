@@ -7,7 +7,7 @@ export function Modal(props: any) {
   const { isOpen } = props;
 
   const myClassName = clsx(
-    "transition-all fixed grid grid-rows-3 border border-slate-600 backdrop-filter backdrop-blur-2xl bg-gray-800/80 h-[200px] text-slate-400",
+    "transition-all fixed border border-slate-600 backdrop-filter backdrop-blur-2xl bg-gray-800/80 h-[200px] text-slate-400",
     {
       "right-2.5 w-80 -bottom-52": !isOpen,
       "right-2.5 w-80 bottom-[58px]": isOpen,
