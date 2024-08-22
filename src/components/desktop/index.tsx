@@ -1,6 +1,7 @@
 import { useDragAndDrop } from "@formkit/drag-and-drop/react";
-import { Icons } from "../../lib/icons";
 import { swap } from "@formkit/drag-and-drop";
+
+import { Icons } from "../../lib/icons";
 import { Icon } from "./icon";
 
 const IconsArr = [
