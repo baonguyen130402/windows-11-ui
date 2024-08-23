@@ -31,8 +31,8 @@ export function Modal(props: any) {
 
   return (
     <ul className={myClassName} ref={parent}>
-      {icons.map((icon) => (
-        <li className="hover:bg-slate-600/40 justify-self-center p-1 rounded-[0.25rem]">
+      {icons.map((icon: any, id: number) => (
+        <li key={id} className="hover:bg-slate-600/40 justify-self-center p-1 rounded-[0.25rem]">
           {icon}
         </li>
       ))}

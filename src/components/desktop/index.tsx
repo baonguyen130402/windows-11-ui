@@ -13,6 +13,98 @@ const IconsArr = [
     title: "Firefox",
     icon: <Icons.firefox className="size-11 justify-self-center" />,
   },
+  {
+    title: "Edge",
+    icon: <Icons.msEdge className="size-12 justify-self-center" />,
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  },
+  {
+    title: "",
+    icon: "",
+  }
 ];
 
 export function Desktop() {

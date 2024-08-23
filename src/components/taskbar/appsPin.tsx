@@ -12,15 +12,16 @@ export function AppsPin() {
   ], { plugins: [animations()] });
 
   return (
-      <ul className="flex items-center gap-x-1" ref={parent}>
-        {icons.map((icon: any, id: number) => (
-          <li
-            key={id}
-            className="p-1 hover:bg-[rgba(255,255,255,.15)] hover:rounded-[0.25rem] flex items-center justify-center hover:w-10 hover:h-10 w-10 h-10"
-          >
-            {icon}
-          </li>
-        ))}
-      </ul>
-  );
+    <ul className="flex items-center gap-x-1" ref={parent}>
+      {icons.map((icon: any, id: number) => (
+        <li
+          key={id}
+          data-label={icon}
+          className="p-1 hover:bg-[rgba(255,255,255,.15)] hover:rounded-[0.25rem] flex items-center justify-center hover:w-10 hover:h-10 w-10 h-10"
+        >
+          {icon}
+        </li>
+      ))}
+    </ul>
+  )
 }
