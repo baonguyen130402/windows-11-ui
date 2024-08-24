@@ -8,12 +8,18 @@ export function Modal(props: any) {
   const { isOpen } = props;
 
   const trayIcons = [
-    <Icons.wifi className="size-4" />,
-    <Icons.speaker className="size-4" />,
-    <Icons.battery className="size-4" />,
-    <Icons.speaker className="size-4" />,
-    <Icons.wifi className="size-4" />,
-    <Icons.battery className="size-4" />,
+    {
+      icon: <Icons.wifi className="size-4" />,
+      title: "wifi",
+    },
+    {
+      icon: <Icons.speaker className="size-4" />,
+      title: "speaker",
+    },
+    {
+      icon: <Icons.battery className="size-4" />,
+      title: "battery",
+    },
   ];
 
   const [parent, icons] = useDragAndDrop<HTMLUListElement, any>(
@@ -31,9 +37,12 @@ export function Modal(props: any) {
 
   return (
     <ul className={myClassName} ref={parent}>
-      {icons.map((icon: any, id: number) => (
-        <li key={id} className="hover:bg-slate-600/40 justify-self-center p-1 rounded-[0.25rem]">
-          {icon}
+      {icons.map((icon: any) => (
+        <li
+          key={icon.title}
+          className="hover:bg-slate-600/40 justify-self-center p-1 rounded-[0.25rem]"
+        >
+          {icon.icon}
         </li>
       ))}
     </ul>
