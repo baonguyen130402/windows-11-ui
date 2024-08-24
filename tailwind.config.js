@@ -9,10 +9,8 @@ module.exports = {
   ],
   prefix: "",
   theme: {
-    // gridTemplateRows: {
-    //   "24": "repeat(24, minmax(0, 1fr))",
-    // },
     gridTemplateColumns: {
+      "3": "repeat(3, minmax(0, 1fr))",
       "12": "repeat(12, minmax(0, 1fr))",
       "15": "repeat(15, minmax(0, 1fr))",
       "18": "repeat(18, minmax(0, 1fr))",
@@ -75,10 +73,15 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        fadeIn: {
+          "0%": { backgroundColor: "transparent", color: "transparent" },
+          "100%": { backgroundColor: "#1b1f1f", color: "#f5f5f5" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade": "fadeIn 0.2s ease-in 0.5s both",
       },
     },
   },

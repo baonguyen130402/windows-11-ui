@@ -1,19 +1,26 @@
 import { useState } from "react";
 import { getDateTime } from "../../lib/data";
 import { Icons } from "../../lib/icons";
-import { Card, CardHeader, CardTitle } from "../../lib/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../../lib/components/ui/card";
 import clsx from "clsx";
 
 export function Modal(props: any) {
   const { isOpen } = props;
 
   const myClassName = clsx(
-    "transition-all duration-700 fixed z-10 bottom-[58px] gap-y-2.5 grid grid-rows-3",
+    "transition-all fixed z-10 bottom-[58px] gap-y-2.5 grid grid-rows-3",
     {
       "-right-80 w-80": !isOpen,
       "right-2.5 w-80": isOpen,
     },
   );
+
+  const textClassName = clsx(
+    "transition duration-500",
+    {
+      "opacity-0": !isOpen,
+      "text-[#f5f5f5] opacity-100 delay-300": isOpen,
+    })
 
   return (
     <div className={myClassName}>
@@ -23,6 +30,9 @@ export function Modal(props: any) {
             Notifications
           </CardTitle>
         </CardHeader>
+        <CardContent>
+          <p className={textClassName}>No new notifications</p>
+        </CardContent>
       </Card>
       <Card className="border border-slate-600 backdrop-blur-2xl backdrop-filter bg-gray-800/80 text-slate-400">
         <CardHeader>
