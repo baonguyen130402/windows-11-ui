@@ -118,8 +118,8 @@ export function Desktop() {
       className="w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5"
       ref={parent}
     >
-      {icons.map((icon: any, id: number) => (
-        <Icon key={id} title={icon.title} icon={icon.icon} rowId={id} />
+      {icons.map((icon: any) => (
+        <Icon key={icon.title} title={icon.title} icon={icon.icon} />
       ))}
     </ul>
   );
