@@ -1,8 +1,15 @@
 import { useState } from "react";
-import { getDateTime } from "../../lib/data";
-import { Icons } from "../../lib/icons";
-import { Card, CardContent, CardHeader, CardTitle } from "../../lib/components/ui/card";
+
 import clsx from "clsx";
+
+import { getDateTime } from "../../lib/helper";
+import { Icons } from "../../lib/icons";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../../lib/components/ui/card";
 
 export function Modal(props: any) {
   const { isOpen } = props;
@@ -20,7 +27,8 @@ export function Modal(props: any) {
     {
       "opacity-0": !isOpen,
       "text-[#f5f5f5] opacity-100 delay-300": isOpen,
-    })
+    },
+  );
 
   return (
     <div className={myClassName}>

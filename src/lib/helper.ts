@@ -24,3 +24,24 @@ export function getDateTime() {
 
   return { currentTime, currentDate };
 }
+
+export function separateDesktopLayout(
+  icons: any = [{ title: "", icon: "" }],
+  row: number = 9,
+  column: number = 18,
+) {
+  const { title, icon } = icons;
+
+  const desktopLayout = Array
+    .from(Array(row), () =>
+      new Array(column)
+        .fill({ icon: "", title: "" }));
+
+  if (title !== "" && icon !== "") {
+    icons.forEach((icon: any, id: number) => {
+      desktopLayout[id][0] = icon
+    })
+  }
+
+  return desktopLayout;
+}

@@ -1,8 +1,9 @@
-import { useDragAndDrop } from "@formkit/drag-and-drop/react";
 import { swap } from "@formkit/drag-and-drop";
+import { useDragAndDrop } from "@formkit/drag-and-drop/react";
 
-import { Icons } from "../../lib/icons";
 import { Icon } from "./icon";
+import { Icons } from "../../lib/icons";
+import { separateDesktopLayout } from "../../lib/helper";
 
 const IconsArr = [
   {
@@ -18,27 +19,6 @@ const IconsArr = [
     icon: <Icons.msEdge className="size-12 justify-self-center" />,
   },
 ];
-
-function separateDesktopLayout(
-  icons: any = [{ title: "", icon: "" }],
-  row: number = 9,
-  column: number = 18,
-) {
-  const { title, icon } = icons;
-
-  const desktopLayout = Array
-    .from(Array(row), () =>
-      new Array(column)
-        .fill({ icon: "", title: "" }));
-
-  if (title !== "" && icon !== "") {
-    icons.forEach((icon: any, id: number) => {
-      desktopLayout[id][0] = icon
-    })
-  }
-
-  return desktopLayout;
-}
 
 export function Desktop() {
   const array = separateDesktopLayout(IconsArr);
