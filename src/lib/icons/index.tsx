@@ -39,18 +39,94 @@ export const Icons = {
   home: (props: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      x="0px"
+      y="0px"
+      width="100"
+      height="100"
+      viewBox="0 0 48 48"
       {...props}
     >
-      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-      <polyline points="9 22 9 12 15 12 15 22" />
+      <linearGradient
+        id="jv689zNUBazMNK6AOyXtga_wFfu6zXx15Yk_gr1"
+        x1="6"
+        x2="42"
+        y1="41"
+        y2="41"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0" stopColor="#c8d3de"></stop>
+        <stop offset="1" stopColor="#c8d3de"></stop>
+      </linearGradient>
+      <path
+        fill="url(#jv689zNUBazMNK6AOyXtga_wFfu6zXx15Yk_gr1)"
+        d="M42,39H6v2c0,1.105,0.895,2,2,2h32c1.105,0,2-0.895,2-2V39z"
+      >
+      </path>
+      <linearGradient
+        id="jv689zNUBazMNK6AOyXtgb_wFfu6zXx15Yk_gr2"
+        x1="14.095"
+        x2="31.385"
+        y1="10.338"
+        y2="43.787"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0" stopColor="#fcfcfc"></stop>
+        <stop offset=".495" stopColor="#f4f4f4"></stop>
+        <stop offset=".946" stopColor="#e8e8e8"></stop>
+        <stop offset="1" stopColor="#e8e8e8"></stop>
+      </linearGradient>
+      <path
+        fill="url(#jv689zNUBazMNK6AOyXtgb_wFfu6zXx15Yk_gr2)"
+        d="M42,39H6V20L24,3l18,17V39z"
+      >
+      </path>
+      <path
+        fill="#de490d"
+        d="M13,25h10c0.552,0,1,0.448,1,1v17H12V26C12,25.448,12.448,25,13,25z"
+      >
+      </path>
+      <path
+        d="M24,4c-0.474,0-0.948,0.168-1.326,0.503l-5.359,4.811L6,20v5.39L24,9.428L42,25.39V20L30.685,9.314	l-5.359-4.811C24.948,4.168,24.474,4,24,4z"
+        opacity=".05"
+      >
+      </path>
+      <path
+        d="M24,3c-0.474,0-0.948,0.167-1.326,0.5l-5.359,4.784L6,18.909v5.359L24,8.397l18,15.871v-5.359	L30.685,8.284L25.326,3.5C24.948,3.167,24.474,3,24,3z"
+        opacity=".07"
+      >
+      </path>
+      <linearGradient
+        id="jv689zNUBazMNK6AOyXtgc_wFfu6zXx15Yk_gr3"
+        x1="24"
+        x2="24"
+        y1="1.684"
+        y2="23.696"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0" stopColor="#d43a02"></stop>
+        <stop offset="1" stopColor="#b9360c"></stop>
+      </linearGradient>
+      <path
+        fill="url(#jv689zNUBazMNK6AOyXtgc_wFfu6zXx15Yk_gr3)"
+        d="M44.495,19.507L25.326,2.503C24.948,2.168,24.474,2,24,2s-0.948,0.168-1.326,0.503	L3.505,19.507c-0.42,0.374-0.449,1.02-0.064,1.43l1.636,1.745c0.369,0.394,0.984,0.424,1.39,0.067L24,7.428L41.533,22.75	c0.405,0.356,1.021,0.327,1.39-0.067l1.636-1.745C44.944,20.527,44.915,19.881,44.495,19.507z"
+      >
+      </path>
+      <linearGradient
+        id="jv689zNUBazMNK6AOyXtgd_wFfu6zXx15Yk_gr4"
+        x1="28.05"
+        x2="35.614"
+        y1="25.05"
+        y2="32.614"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0" stopColor="#33bef0"></stop>
+        <stop offset="1" stopColor="#0a85d9"></stop>
+      </linearGradient>
+      <path
+        fill="url(#jv689zNUBazMNK6AOyXtgd_wFfu6zXx15Yk_gr4)"
+        d="M29,25h6c0.552,0,1,0.448,1,1v6c0,0.552-0.448,1-1,1h-6c-0.552,0-1-0.448-1-1v-6	C28,25.448,28.448,25,29,25z"
+      >
+      </path>
     </svg>
   ),
   reply: (props: IconProps) => (
@@ -968,6 +1044,44 @@ export const Icons = {
         d="M44.5,40h-41C2.119,40,1,38.881,1,37.5v-21C1,15.119,2.119,14,3.5,14h13.256	c1.382,0,2.733-0.409,3.883-1.176L21.875,12H44.5c1.381,0,2.5,1.119,2.5,2.5v23C47,38.881,45.881,40,44.5,40z"
       >
       </path>
+    </svg>
+  ),
+  effacer: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="100"
+      height="100"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path d="M 19.990234 2.9863281 A 1.0001 1.0001 0 0 0 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 A 1.0001 1.0001 0 0 0 3.9902344 2.9902344 A 1.0001 1.0001 0 0 0 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 A 1.0001 1.0001 0 1 0 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 A 1.0001 1.0001 0 1 0 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 A 1.0001 1.0001 0 0 0 19.990234 2.9863281 z">
+      </path>
+    </svg>
+  ),
+  windowMaximize: (props: IconProps) => (
+    <svg
+      width="800px"
+      height="800px"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+      {...props}
+    >
+      <path d="m 10,10 80,0 0,80 -80,0 z m 10,10 0,60 60,0 0,-60 z" />
+    </svg>
+  ),
+  windowMinimize: (props: IconProps) => (
+    <svg
+      width="800px"
+      height="800px"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      version="1.1"
+      {...props}
+    >
+      <path d="m 20,50 60,0 0,10 -60,0 z" />
     </svg>
   ),
 };

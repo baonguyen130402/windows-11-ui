@@ -4,6 +4,9 @@ import { useDragAndDrop } from "@formkit/drag-and-drop/react";
 import { Icon } from "./icon";
 import { Icons } from "../../lib/icons";
 import { separateDesktopLayout } from "../../lib/helper";
+import { useContext } from "react";
+import { ModalContext } from "../../lib/contexts/ModalContext";
+import { FileExplorer } from "../apps/file-explorer";
 
 const IconsArr = [
   {
@@ -22,6 +25,7 @@ const IconsArr = [
 
 export function Desktop() {
   const array = separateDesktopLayout(IconsArr);
+  const { isOpening } = useContext(ModalContext);
 
   const [parent, rows] = useDragAndDrop<HTMLUListElement, any>(
     array,
@@ -41,6 +45,7 @@ export function Desktop() {
           <Icon key={item.title} title={item.title} icon={item.icon} />
         ))
       ))}
+      <FileExplorer />
     </ul>
   );
 }

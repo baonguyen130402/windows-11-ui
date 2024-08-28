@@ -1,0 +1,9 @@
+import { Icons } from "../../../../lib/icons";
+
+export function Header() {
+  return (
+    <div className="w-full h-10 bg-slate-600">
+      
+    </div>
+  )
+}
