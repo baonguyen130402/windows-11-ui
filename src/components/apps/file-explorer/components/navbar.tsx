@@ -3,7 +3,7 @@ import { Icons } from "../../../../lib/icons";
 
 export function Navbar() {
   return (
-    <nav className="grid grid-cols-12 w-full h-8 gap-2 px-2 py-1">
+    <nav className="grid grid-cols-12 w-full h-12 gap-2 px-2 py-1">
       <div className="col-span-2 flex items-center gap-4 justify-center">
         <div className="p-1">
           <Icons.arrowLeft className="size-5 fill-white" />
