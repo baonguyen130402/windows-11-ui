@@ -7,6 +7,7 @@ import { separateDesktopLayout } from "../../lib/helper";
 import { useContext } from "react";
 import { ModalContext } from "../../lib/contexts/ModalContext";
 import { FileExplorer } from "../apps/file-explorer";
+import { MzFirefox } from "../apps/mz-firefox";
 
 const IconsArr = [
   {
@@ -45,7 +46,7 @@ export function Desktop() {
           <Icon key={item.title} title={item.title} icon={item.icon} />
         ))
       ))}
-      <FileExplorer />
+      <MzFirefox />
     </ul>
   );
 }
