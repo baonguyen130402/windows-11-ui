@@ -39,8 +39,8 @@ export function separateDesktopLayout(
 
   if (title !== "" && icon !== "") {
     icons.forEach((icon: any, id: number) => {
-      desktopLayout[id][0] = icon
-    })
+      desktopLayout[id][0] = icon;
+    });
   }
 
   return desktopLayout;
