@@ -43,17 +43,17 @@ export function Sidebar() {
         <Icons.cloud className="size-5 fill-blue-400 mr-1.5" />
         <span className="text-sm font-medium">Baonguyen - Personal</span>
       </div>
-      <div className="border-b border-t border-gray-700 my-2 py-2">
+      <ul className="border-b border-t border-gray-700 my-2 py-2">
         {defaultApps.map((app) => (
-          <div className="flex justify-between items-center">
+          <li key={app.title} className="flex justify-between items-center">
             <div className="flex items-center px-4 ml-5 py-1">
               {app.icon}
               <span className="text-sm font-medium">{app.title}</span>
             </div>
             <Icons.pin className="size-4 fill-gray-700" />
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
       <div className="flex items-center px-4 py-1">
         <Icons.chevronRight className="size-4 mr-1.5 " />
         <Icons.cloud className="size-5 fill-blue-400 mr-1.5" />
