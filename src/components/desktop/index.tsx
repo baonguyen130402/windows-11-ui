@@ -4,8 +4,6 @@ import { useDragAndDrop } from "@formkit/drag-and-drop/react";
 import { Icon } from "./icon";
 import { Icons } from "../../lib/icons";
 import { separateDesktopLayout } from "../../lib/helper";
-import { useContext } from "react";
-import { ModalContext } from "../../lib/contexts/ModalContext";
 import { FileExplorer } from "../apps/file-explorer";
 import { MzFirefox } from "../apps/mz-firefox";
 
@@ -26,7 +24,6 @@ const IconsArr = [
 
 export function Desktop() {
   const array = separateDesktopLayout(IconsArr);
-  const { isOpening } = useContext(ModalContext);
 
   const [parent, rows] = useDragAndDrop<HTMLUListElement, any>(
     array,
@@ -38,7 +35,7 @@ export function Desktop() {
 
   return (
     <ul
-      className="w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5"
+      className="relative w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5"
       ref={parent}
     >
       {rows.map((row: any) => (
