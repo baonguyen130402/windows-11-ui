@@ -6,6 +6,12 @@ import { Icons } from "../../lib/icons";
 import { separateDesktopLayout } from "../../lib/helper";
 import { FileExplorer } from "../apps/file-explorer";
 import { MzFirefox } from "../apps/mz-firefox";
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuTrigger,
+} from "../../lib/components/ui/context-menu";
+import { ContextContent } from "./contextMenu";
 
 const IconsArr = [
   {
@@ -34,16 +40,21 @@ export function Desktop() {
   );
 
   return (
-    <ul
-      className="relative w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5"
-      ref={parent}
-    >
-      {rows.map((row: any) => (
-        row.map((item: any) => (
-          <Icon key={item.title} title={item.title} icon={item.icon} />
-        ))
-      ))}
-      <MzFirefox />
-    </ul>
+    <ContextMenu>
+      <ContextMenuTrigger>
+        <ul
+          className="relative w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5"
+          ref={parent}
+        >
+          {rows.map((row: any) => (
+            row.map((item: any) => (
+              <Icon key={item.title} title={item.title} icon={item.icon} />
+            ))
+          ))}
+          <FileExplorer />
+        </ul>
+      </ContextMenuTrigger>
+      <ContextContent />
+    </ContextMenu>
   );
 }
