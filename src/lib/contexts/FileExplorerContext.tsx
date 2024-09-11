@@ -1,12 +1,12 @@
 import { createContext, useState } from "react";
 
 interface Props {
-  fireExploreOpening: boolean;
+  fileExplorerOpening: boolean;
   setFileExplorerOpening: (isOpening: boolean) => void;
 }
 
 export const FileExplorerContext = createContext<Props>({
-  fireExploreOpening: false,
+  fileExplorerOpening: false,
   setFileExplorerOpening: () => { },
 });
 
@@ -16,7 +16,7 @@ export default function FileExplorerProvider({ children }) {
   return (
     <FileExplorerContext.Provider
       value={{
-        fireExploreOpening: isOpening,
+        fileExplorerOpening: isOpening,
         setFileExplorerOpening: (value) => {
           setIsOpen(value);
         },

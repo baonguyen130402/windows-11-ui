@@ -1,17 +1,22 @@
 import { swap } from "@formkit/drag-and-drop";
 import { useDragAndDrop } from "@formkit/drag-and-drop/react";
+import { useContext, useState } from "react";
 
+import {
+  ContextMenu,
+  ContextMenuTrigger,
+} from "../../lib/components/ui/context-menu";
 import { Icon } from "./icon";
 import { Icons } from "../../lib/icons";
 import { separateDesktopLayout } from "../../lib/helper";
-import { FileExplorer } from "../apps/file-explorer";
 import { MzFirefox } from "../apps/mz-firefox";
-import {
-  ContextMenu,
-  ContextMenuContent,
-  ContextMenuTrigger,
-} from "../../lib/components/ui/context-menu";
 import { ContextContent } from "./contextMenu";
+import { FileExplorer } from "../apps/file-explorer";
+import { MsEdge } from "../apps/ms-edge";
+
+import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
+import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
+import { MsEdgeContext } from "../../lib/contexts/ModalContext";
 
 const IconsArr = [
   {
@@ -31,6 +36,10 @@ const IconsArr = [
 export function Desktop() {
   const array = separateDesktopLayout(IconsArr);
 
+  const { msEdgeOpening } = useContext(MsEdgeContext);
+  const { mzFirefoxOpening } = useContext(MzFirefoxContext);
+  const { fileExplorerOpening } = useContext(FileExplorerContext);
+
   const [parent, rows] = useDragAndDrop<HTMLUListElement, any>(
     array,
     {
@@ -48,11 +57,17 @@ export function Desktop() {
         >
           {rows.map((row: any) => (
             row.map((item: any) => (
-              <Icon key={item.title} title={item.title} icon={item.icon} />
+              <Icon
+                key={item.title}
+                title={item.title}
+                icon={item.icon}
+              />
             ))
           ))}
-          <FileExplorer />
         </ul>
+        {msEdgeOpening && <MsEdge />}
+        {mzFirefoxOpening && <MzFirefox />}
+        {fileExplorerOpening && <FileExplorer />}
       </ContextMenuTrigger>
       <ContextContent />
     </ContextMenu>
