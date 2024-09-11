@@ -4,9 +4,9 @@ import { Navbar } from "./components/navbar";
 import { PagePin } from "./components/pagePin";
 import { SearchForm } from "./components/searchForm";
 
-export function MzFirefox() {
+export function MsEdge() {
   return (
-    <article className="absoluted w-[1000px] h-[600px] bg-gray-900 fixed top-[50px] left-1/3 rounded-[0.5rem] overflow-hidden">
+    <article className="w-[1000px] h-[600px] bg-gray-900/80 backdrop-filter backdrop-blur-lg fixed top-[50px] left-1/3 rounded-[0.5rem] overflow-hidden">
       <Header />
       <div className="bg-gray-700">
         <Navbar />

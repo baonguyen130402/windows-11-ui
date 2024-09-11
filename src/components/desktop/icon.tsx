@@ -1,10 +1,21 @@
 import clsx from "clsx";
 import { useContext } from "react";
-import { ModalContext } from "../../lib/contexts/ModalContext";
+import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
+import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
+import { MsEdgeContext } from "../../lib/contexts/ModalContext";
 
 export function Icon(props: any) {
-  const { title, icon, isActive, rowId, colId = 1 } = props;
-  const { isOpening, setIsOpening } = useContext(ModalContext);
+  const {
+    title,
+    icon,
+    isActive,
+    rowId,
+    colId = 1,
+  } = props;
+
+  const { setMsEdgeOpening } = useContext(MsEdgeContext);
+  const { setMzFirefoxOpening } = useContext(MzFirefoxContext);
+  const { setFileExplorerOpening } = useContext(FileExplorerContext);
 
   const myClassName = clsx(
     "grid text-center",
@@ -14,10 +25,27 @@ export function Icon(props: any) {
     },
   );
 
+  function handleDoubleClick(icon: string) {
+    if (icon === "Firefox") {
+      setMzFirefoxOpening(true);
+    }
+
+    if (icon === "Edge") {
+      setMsEdgeOpening(true);
+    }
+
+    if (icon === "Folder") {
+      setFileExplorerOpening(true);
+    }
+  }
+
   return (
-    <li className={myClassName} onDoubleClick={() => setIsOpening(!isOpening)}>
+    <li
+      className={myClassName}
+      onDoubleClick={() => handleDoubleClick(title)}
+    >
       {icon}
-      <span className="text-sm">{title}</span>
+      <span className="text-sm select-none">{title}</span>
     </li>
   );
 }

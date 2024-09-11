@@ -1,28 +1,28 @@
 import { createContext, useState } from "react";
 
 interface Props {
-  isOpening: boolean;
-  setIsOpening: (isOpening: boolean) => void;
+  msEdgeOpening: boolean;
+  setMsEdgeOpening: (isOpening: boolean) => void;
 }
 
-export const ModalContext = createContext<Props>({
-  isOpening: false,
-  setIsOpening: () => { },
+export const MsEdgeContext = createContext<Props>({
+  msEdgeOpening: false,
+  setMsEdgeOpening: () => { },
 });
 
-export default function ModalProvider({ children }) {
+export default function MsEdgeProvider({ children }) {
   const [isOpening, setIsOpen] = useState(false);
 
   return (
-    <ModalContext.Provider
+    <MsEdgeContext.Provider
       value={{
-        isOpening: isOpening,
-        setIsOpening: (value) => {
+        msEdgeOpening: isOpening,
+        setMsEdgeOpening: (value) => {
           setIsOpen(value);
         },
       }}
     >
       {children}
-    </ModalContext.Provider>
+    </MsEdgeContext.Provider>
   );
 }

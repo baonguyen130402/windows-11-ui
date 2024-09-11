@@ -1,13 +1,22 @@
 import { swap } from "@formkit/drag-and-drop";
 import { useDragAndDrop } from "@formkit/drag-and-drop/react";
+import { useContext, useState } from "react";
 
+import {
+  ContextMenu,
+  ContextMenuTrigger,
+} from "../../lib/components/ui/context-menu";
 import { Icon } from "./icon";
 import { Icons } from "../../lib/icons";
 import { separateDesktopLayout } from "../../lib/helper";
-import { useContext } from "react";
-import { ModalContext } from "../../lib/contexts/ModalContext";
-import { FileExplorer } from "../apps/file-explorer";
 import { MzFirefox } from "../apps/mz-firefox";
+import { ContextContent } from "./contextMenu";
+import { FileExplorer } from "../apps/file-explorer";
+import { MsEdge } from "../apps/ms-edge";
+
+import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
+import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
+import { MsEdgeContext } from "../../lib/contexts/ModalContext";
 
 const IconsArr = [
   {
@@ -26,7 +35,10 @@ const IconsArr = [
 
 export function Desktop() {
   const array = separateDesktopLayout(IconsArr);
-  const { isOpening } = useContext(ModalContext);
+
+  const { msEdgeOpening } = useContext(MsEdgeContext);
+  const { mzFirefoxOpening } = useContext(MzFirefoxContext);
+  const { fileExplorerOpening } = useContext(FileExplorerContext);
 
   const [parent, rows] = useDragAndDrop<HTMLUListElement, any>(
     array,
@@ -37,16 +49,27 @@ export function Desktop() {
   );
 
   return (
-    <ul
-      className="w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5"
-      ref={parent}
-    >
-      {rows.map((row: any) => (
-        row.map((item: any) => (
-          <Icon key={item.title} title={item.title} icon={item.icon} />
-        ))
-      ))}
-      <MzFirefox />
-    </ul>
+    <ContextMenu>
+      <ContextMenuTrigger>
+        <ul
+          className="relative w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5"
+          ref={parent}
+        >
+          {rows.map((row: any) => (
+            row.map((item: any) => (
+              <Icon
+                key={item.title}
+                title={item.title}
+                icon={item.icon}
+              />
+            ))
+          ))}
+        </ul>
+        {msEdgeOpening && <MsEdge />}
+        {mzFirefoxOpening && <MzFirefox />}
+        {fileExplorerOpening && <FileExplorer />}
+      </ContextMenuTrigger>
+      <ContextContent />
+    </ContextMenu>
   );
 }
