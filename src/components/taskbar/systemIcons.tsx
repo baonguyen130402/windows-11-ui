@@ -58,7 +58,6 @@ export function Modal(props: any) {
           className="w-full"
         />
       </div>
-      <iframe src="https://www.youtube.com" width="100%" height="560"></iframe>
     </div>
   );
 }
