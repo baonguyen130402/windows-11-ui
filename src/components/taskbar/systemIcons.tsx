@@ -1,11 +1,14 @@
 import clsx from "clsx";
 import { Icons } from "../../lib/icons";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Slider } from "../../lib/components/ui/slider";
+import { SunIcon } from "@radix-ui/react-icons";
+import { BrightnessContext } from "../../lib/contexts/BrightnessContext";
 
 export function Modal(props: any) {
   const { isOpen } = props;
-  
+  const { setBrightness } = useContext(BrightnessContext);
+
   const buttons = [
     {
       icon: <Icons.wifi className="size-5" />,
@@ -50,9 +53,19 @@ export function Modal(props: any) {
         ))}
       </div>
       <div className="flex items-center gap-2 mt-4">
-        <Icons.speaker className="size-4"/>
+        <Icons.speaker className="size-4" />
         <Slider
           defaultValue={[50]}
+          max={100}
+          step={1}
+          className="w-full"
+        />
+      </div>
+      <div className="flex items-center gap-2 mt-4">
+        <SunIcon className="size-4" />
+        <Slider
+          defaultValue={[80]}
+          onValueChange={(value) => setBrightness(value[0])}
           max={100}
           step={1}
           className="w-full"
