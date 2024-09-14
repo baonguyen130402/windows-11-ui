@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { useContext } from "react";
 import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
 import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
-import { MsEdgeContext } from "../../lib/contexts/ModalContext";
+import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
 
 export function Icon(props: any) {
   const {

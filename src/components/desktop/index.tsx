@@ -16,7 +16,7 @@ import { MsEdge } from "../apps/ms-edge";
 
 import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
 import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
-import { MsEdgeContext } from "../../lib/contexts/ModalContext";
+import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
 
 const IconsArr = [
   {
@@ -52,7 +52,7 @@ export function Desktop() {
     <ContextMenu>
       <ContextMenuTrigger>
         <ul
-          className="relative w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5"
+          className="w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5"
           ref={parent}
         >
           {rows.map((row: any) => (
@@ -65,10 +65,10 @@ export function Desktop() {
             ))
           ))}
         </ul>
-        {msEdgeOpening && <MsEdge />}
-        {mzFirefoxOpening && <MzFirefox />}
-        {fileExplorerOpening && <FileExplorer />}
       </ContextMenuTrigger>
+      {msEdgeOpening && <MsEdge />}
+      {mzFirefoxOpening && <MzFirefox />}
+      {fileExplorerOpening && <FileExplorer />}
       <ContextContent />
     </ContextMenu>
   );

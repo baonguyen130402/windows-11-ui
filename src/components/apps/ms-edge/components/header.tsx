@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Icons } from "../../../../lib/icons";
 import { Tab } from "./tab";
-import { MsEdgeContext } from "../../../../lib/contexts/ModalContext";
+import { MsEdgeContext } from "../../../../lib/contexts/MsEdgeContext";
 
 export function Header() {
   const { setMsEdgeOpening } = useContext(MsEdgeContext);
