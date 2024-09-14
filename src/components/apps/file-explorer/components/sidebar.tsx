@@ -1,4 +1,6 @@
+import { useDragAndDrop } from "@formkit/drag-and-drop/react";
 import { Icons } from "../../../../lib/icons";
+import { animations } from "@formkit/drag-and-drop";
 
 const defaultApps = [
   {
@@ -32,6 +34,10 @@ const defaultApps = [
 ];
 
 export function Sidebar() {
+  const [parent, apps] = useDragAndDrop<HTMLUListElement, any>(defaultApps, {
+    plugins: [animations()],
+  });
+
   return (
     <div className="col-span-3 border-r border-gray-700 h-full px-2">
       <div className="flex items-center px-4 py-1 ml-2">
@@ -43,8 +49,8 @@ export function Sidebar() {
         <Icons.cloud className="size-5 fill-blue-400 mr-1.5" />
         <span className="text-sm font-medium">Baonguyen - Personal</span>
       </div>
-      <ul className="border-b border-t border-gray-700 my-2 py-2">
-        {defaultApps.map((app) => (
+      <ul ref={parent} className="border-b border-t border-gray-700 my-2 py-2">
+        {apps.map((app) => (
           <li key={app.title} className="flex justify-between items-center">
             <div className="flex items-center px-4 ml-2 py-1">
               {app.icon}
