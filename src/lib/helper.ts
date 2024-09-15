@@ -59,7 +59,7 @@ export async function getWeather() {
   };
 
   const { data: weather } = await axios.get(
-    ` https://api.weatherbit.io/v2.0/current?lat=${HCMC.latitude}&lon=${HCMC.longtitude}&key=${import.meta.env.VITE_WEATHER_API_KEY}`,
+    `https://api.weatherbit.io/v2.0/current?lat=${HCMC.latitude}&lon=${HCMC.longtitude}&key=${import.meta.env.VITE_WEATHER_API_KEY}`,
   );
 
   const { temp: temperature } = weather.data[0];
@@ -70,4 +70,3 @@ export async function getWeather() {
     weatherType,
   };
 }
-// getWeather();

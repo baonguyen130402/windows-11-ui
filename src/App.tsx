@@ -1,20 +1,23 @@
 import "./App.css";
 import { MainLayout } from "./components/mainLayout";
+import BrightnessProvider from "./lib/contexts/BrightnessContext";
 import FileExplorerProvider from "./lib/contexts/FileExplorerContext";
-import ModalProvider from "./lib/contexts/ModalContext";
+import MsEdgeProvider from "./lib/contexts/MsEdgeContext";
 import MzFirefoxProvider from "./lib/contexts/MzFirefoxContext";
 import { ThemeProvider } from "./lib/theme/theme-provider";
 
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <ModalProvider>
+      <MsEdgeProvider>
         <MzFirefoxProvider>
           <FileExplorerProvider>
-            <MainLayout />
+            <BrightnessProvider>
+              <MainLayout />
+            </BrightnessProvider>
           </FileExplorerProvider>
         </MzFirefoxProvider>
-      </ModalProvider>
+      </MsEdgeProvider>
     </ThemeProvider>
   );
 }
