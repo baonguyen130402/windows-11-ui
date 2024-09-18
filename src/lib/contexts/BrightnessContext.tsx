@@ -6,12 +6,12 @@ interface Props {
 }
 
 export const BrightnessContext = createContext<Props>({
-  brightness: 50,
+  brightness: 0,
   setBrightness: () => { },
 });
 
 export default function BrightnessProvider({ children }) {
-  const [isOpening, setIsOpen] = useState(0);
+  const [isOpening, setIsOpen] = useState(100);
 
   return (
     <BrightnessContext.Provider
