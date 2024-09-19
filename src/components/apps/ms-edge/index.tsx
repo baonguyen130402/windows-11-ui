@@ -1,21 +1,42 @@
+import Draggable from "react-draggable";
 import { Bookmark } from "./components/bookmark";
 import { Header } from "./components/header";
 import { Navbar } from "./components/navbar";
-import { PagePin } from "./components/pagePin";
-import { SearchForm } from "./components/searchForm";
+import { useRef } from "react";
 
 export function MsEdge() {
+  const homeUrl = "https://google.com/webhp?igu=1";
+  const explorerRef = useRef(null);
+
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+  const bounds = {
+    left: 0,
+    top: 0,
+    right: screenWidth - 1128,
+    bottom: screenHeight - 624,
+  };
+
   return (
-    <article className="w-[1000px] h-[600px] bg-gray-900/80 backdrop-filter backdrop-blur-lg fixed top-[50px] left-1/3 rounded-[0.5rem] overflow-hidden">
-      <Header />
-      <div className="bg-gray-700">
-        <Navbar />
-        <Bookmark />
-      </div>
-      <div className="flex flex-col items-center justify-center p-2 w-full gap-12">
-        <SearchForm />
-        <PagePin />
-      </div>
-    </article>
+    <div className="w-full h-screen absolute">
+      <Draggable handle=".title-bar" nodeRef={explorerRef} bounds={bounds}>
+        <article
+          ref={explorerRef}
+          className="w-[72rem] h-[45rem] bg-gray-900/80 backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden"
+        >
+          <Header />
+          <div className="bg-[#3b3b3b]">
+            <Navbar />
+            <Bookmark />
+          </div>
+          <div className="content w-full h-full bg-[#202124]">
+            <iframe
+              src={homeUrl}
+              className="w-full h-full"
+            />
+          </div>
+        </article>
+      </Draggable>
+    </div>
   );
 }
