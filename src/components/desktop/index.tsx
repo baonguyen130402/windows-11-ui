@@ -64,11 +64,11 @@ export function Desktop() {
               />
             ))
           ))}
+          {msEdgeOpening && <MsEdge />}
+          {mzFirefoxOpening && <MzFirefox />}
+          {fileExplorerOpening && <FileExplorer />}
         </ul>
       </ContextMenuTrigger>
-      {msEdgeOpening && <MsEdge />}
-      {mzFirefoxOpening && <MzFirefox />}
-      {fileExplorerOpening && <FileExplorer />}
       <ContextContent />
     </ContextMenu>
   );
