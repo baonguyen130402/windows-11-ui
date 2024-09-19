@@ -1,0 +1,15 @@
+import { Icons } from "../../../../lib/icons";
+
+export function Tab() {
+  return (
+    <div className="relative w-full">
+      <section className="flex items-center justify-between w-full h-10 bg-gray-700/40 px-2 rounded-[0.25rem] rounded-bl-[0] rounded-br-[0] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:right-0 after:bg-[#f00] after:rounded-full after:shadow-[-10px_10px_0_#232949] before:absolute before:w-[30px] before:h-[10px] before:-bottom-1 before:-left-7 before:border-l before:border-gray-700/40 before:border-b before:rounded-bl-[30px]">
+        <div className="flex items-center">
+          <Icons.msEdge className="size-5 mr-2" />
+          <span className="text-sm font-bold">New tab</span>
+        </div>
+        <Icons.effacer className="size-3 fill-white" />
+      </section>
+    </div>
+  );
+}
