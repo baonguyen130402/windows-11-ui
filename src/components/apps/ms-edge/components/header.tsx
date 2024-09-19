@@ -8,7 +8,7 @@ export function Header() {
 
   return (
     <div className="title-bar">
-      <div className="w-full h-11 flex justify-between items-end px-2 pr-0 bg-neutral-900 relative">
+      <div className="w-full h-11 flex justify-between items-end px-2 pr-0 bg-[#202020] relative">
         <div className="flex items-center w-1/4">
           <div className="flex items-center mr-2">
             <div className="p-1 hover:bg-gray-400 rounded-[0.25rem]">
