@@ -64,10 +64,10 @@ export function Modal(props: any) {
       <div className="flex items-center gap-2 mt-4">
         <SunIcon className="size-4" />
         <Slider
-          defaultValue={[80]}
           onValueChange={(value) => setBrightness(value[0])}
-          max={100}
-          step={1}
+          defaultValue={[100]}
+          max={200}
+          step={10}
           className="w-full"
         />
       </div>
