@@ -39,7 +39,7 @@ export function Sidebar() {
   });
 
   return (
-    <div className="col-span-3 border-r border-gray-700 h-full px-2">
+    <div className="col-span-3 border-r border-gray-700 h-full px-2 pt-3">
       <div className="flex items-center px-4 py-1 ml-2">
         <Icons.home className="size-5 mr-2" />
         <span className="text-sm font-bold">Home</span>

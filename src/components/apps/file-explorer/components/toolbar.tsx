@@ -2,7 +2,7 @@ import { Icons } from "../../../../lib/icons";
 
 export function Toolbar() {
   return (
-    <div className="relative bg-gray-700/40 bg-blur-lg backdrop-filter h-12 flex items-center">
+    <div className="relative bg-[#191919] bg-blur-lg backdrop-filter h-14 flex items-center border-t border-b border-t-gray-700 border-b-gray-700">
       <div className="flex items-center gap-2 px-2">
         <Icons.plusCircle className="size-4 fill-[#999]" />
         <span className="text-[#999] text-sm font-semibold">New</span>
