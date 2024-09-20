@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { Container } from "./components/container";
 import { Header } from "./components/header";
-import { Toolbar } from "./components/toolbar";
 import Draggable from "react-draggable";
 import { Navbar } from "./components/navbar";
 
