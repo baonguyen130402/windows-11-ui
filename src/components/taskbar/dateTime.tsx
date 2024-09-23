@@ -2,14 +2,14 @@ import { useState } from "react";
 
 import clsx from "clsx";
 
-import { getDateTime } from "../../lib/helper";
-import { Icons } from "../../lib/icons";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
 } from "../../lib/components/ui/card";
+import { Icons } from "../../lib/icons";
+import { getDateTime } from "../../lib/helper";
 
 export function Modal(props: any) {
   const { isOpen } = props;
