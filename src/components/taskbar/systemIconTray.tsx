@@ -1,8 +1,10 @@
-import clsx from "clsx";
-import { Icons } from "../../lib/icons";
 import { useState } from "react";
-import { useDragAndDrop } from "@formkit/drag-and-drop/react";
+
+import clsx from "clsx";
 import { animations } from "@formkit/drag-and-drop";
+import { useDragAndDrop } from "@formkit/drag-and-drop/react";
+
+import { Icons } from "../../lib/icons";
 
 export function Modal(props: any) {
   const { isOpen } = props;
