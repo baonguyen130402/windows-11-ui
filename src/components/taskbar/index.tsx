@@ -1,10 +1,10 @@
 import { AppsPin } from "./appsPin";
 import { HomeBtn } from "./homeBtn";
+import { Weather } from "./weather";
 import { DateTime } from "./dateTime";
 import { SearchBtn } from "./searchBtn";
 import { SystemIcons } from "./systemIcons";
 import { SystemIconTray } from "./systemIconTray";
-import { Weather } from "./weather";
 
 export function Taskbar() {
   return (
