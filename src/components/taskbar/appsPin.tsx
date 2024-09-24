@@ -1,31 +1,13 @@
 import { useDragAndDrop } from "@formkit/drag-and-drop/react";
 import { animations } from "@formkit/drag-and-drop";
 
-import { Icons } from "../../lib/icons";
+import { appsPinnedOnTaskbar } from "../../lib/data/taskbar";
 
 export function AppsPin() {
-  const [parent, icons] = useDragAndDrop<HTMLUListElement, any>([
-    {
-      id: 1,
-      icon: <Icons.copilot className="size-8" />,
-      title: "copilot",
-    },
-    {
-      id: 2,
-      icon: <Icons.firefox className="size-7 pt-[1px]" />,
-      title: "firefox",
-    },
-    {
-      id: 3,
-      icon: <Icons.msEdge className="size-8" />,
-      title: "msEdge",
-    },
-    {
-      id: 4,
-      icon: <Icons.folder className="size-8" />,
-      title: "folder",
-    },
-  ], { plugins: [animations()] });
+  const [parent, icons] = useDragAndDrop<HTMLUListElement, any>(
+    appsPinnedOnTaskbar,
+    { plugins: [animations()] },
+  );
 
   return (
     <ul className="flex items-center gap-x-1" ref={parent}>
