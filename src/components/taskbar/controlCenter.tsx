@@ -22,16 +22,16 @@ export function Modal(props: any) {
 
   return (
     <div className={myClassName}>
-      <div className="grid grid-cols-3 grid-rows-2 gap-3">
-        {buttonInControlSystem.map((button) => (
-          <div className="text-center group w-full">
+      <ul className="grid grid-cols-3 grid-rows-2 gap-3">
+        {buttonInControlSystem.map((button, key) => (
+          <li key={key} className="text-center group w-full">
             <div className="bg-gray-700 w-[6.1rem] h-12 border border-gray-500 rounded-[0.25rem] flex items-center justify-center group-hover:bg-gray-600">
               {button.icon}
             </div>
             <span className="tracking-wider text-sm">{button.title}</span>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
       <div className="flex items-center gap-2 mt-4">
         <Icons.speaker className="size-4" />
         <Slider
