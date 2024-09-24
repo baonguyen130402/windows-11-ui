@@ -1,7 +1,8 @@
-import { Taskbar } from "./taskbar";
-import Wallpaper from "../assets/wallpaper.jpg";
-import { Desktop } from "./desktop";
 import { useContext } from "react";
+
+import { Taskbar } from "./taskbar";
+import { Desktop } from "./desktop";
+import Wallpaper from "../assets/wallpaper.jpg";
 import { BrightnessContext } from "../lib/contexts/BrightnessContext";
 
 export function MainLayout() {
