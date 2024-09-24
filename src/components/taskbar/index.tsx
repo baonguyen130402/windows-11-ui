@@ -3,7 +3,7 @@ import { HomeBtn } from "./homeBtn";
 import { Weather } from "./weather";
 import { DateTime } from "./dateTime";
 import { SearchBtn } from "./searchBtn";
-import { SystemIcons } from "./systemIcons";
+import { ControlCenter } from "./controlCenter";
 import { SystemIconTray } from "./systemIconTray";
 
 export function Taskbar() {
@@ -19,7 +19,7 @@ export function Taskbar() {
       </div>
       <div className="flex items-center justify-self-end col-start-4">
         <SystemIconTray />
-        <SystemIcons />
+        <ControlCenter />
         <DateTime />
       </div>
     </section>
