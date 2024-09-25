@@ -10,7 +10,9 @@ module.exports = {
   prefix: "",
   theme: {
     gridTemplateColumns: {
+      "2": "repeat(2, minmax(0, 1fr))",
       "3": "repeat(3, minmax(0, 1fr))",
+      "6": "repeat(6, minmax(0, 1fr))",
       "12": "repeat(12, minmax(0, 1fr))",
       "15": "repeat(15, minmax(0, 1fr))",
       "18": "repeat(18, minmax(0, 1fr))",
