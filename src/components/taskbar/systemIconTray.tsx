@@ -1,29 +1,18 @@
-import clsx from "clsx";
-import { Icons } from "../../lib/icons";
 import { useState } from "react";
-import { useDragAndDrop } from "@formkit/drag-and-drop/react";
+
+import clsx from "clsx";
 import { animations } from "@formkit/drag-and-drop";
+import { useDragAndDrop } from "@formkit/drag-and-drop/react";
+
+import { Icons } from "../../lib/icons";
+import { iconsInTray } from "../../lib/data/taskbar";
 
 export function Modal(props: any) {
   const { isOpen } = props;
 
-  const trayIcons = [
-    {
-      icon: <Icons.wifi className="size-4" />,
-      title: "wifi",
-    },
-    {
-      icon: <Icons.speaker className="size-4" />,
-      title: "speaker",
-    },
-    {
-      icon: <Icons.battery className="size-4" />,
-      title: "battery",
-    },
-  ];
-
+  
   const [parent, icons] = useDragAndDrop<HTMLUListElement, any>(
-    trayIcons,
+    iconsInTray,
     { plugins: [animations()] },
   );
 

@@ -1,6 +1,8 @@
-import clsx from "clsx";
-import { Icons } from "../../lib/icons";
 import { useContext, useState } from "react";
+
+import clsx from "clsx";
+
+import { Icons } from "../../lib/icons";
 import { Slider } from "../../lib/components/ui/slider";
 import { SunIcon } from "@radix-ui/react-icons";
 import { BrightnessContext } from "../../lib/contexts/BrightnessContext";

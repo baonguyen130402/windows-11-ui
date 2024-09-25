@@ -17,6 +17,9 @@ module.exports = {
       "24": "repeat(24, minmax(0, 1fr))",
     },
     gridColumn: {
+      "span-2": "span 2 / span 2",
+      "span-3": "span 3 / span 3",
+      "span-7": "span 7 / span 7",
       "span-15": "span 15 / span 15",
     },
     brightness: {

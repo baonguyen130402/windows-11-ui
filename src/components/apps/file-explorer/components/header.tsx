@@ -5,22 +5,24 @@ import { FileExplorerContext } from "../../../../lib/contexts/FileExplorerContex
 
 export function Header() {
   const { setFileExplorerOpening } = useContext(FileExplorerContext);
-  
+
   return (
-    <div className="w-full h-10 flex justify-between px-2 pt-1.5">
-      <Tab />
-      <div className="self-start flex items-center justify-around w-[100px]">
-        <div className="p-2 hover:bg-red-400 rounded-[0.25rem]">
-          <Icons.windowMinimize className="size-4 fill-white" />
-        </div>
-        <div className="p-2 hover:bg-red-400 rounded-[0.25rem]">
-          <Icons.windowMaximize className="size-4 fill-white" />
-        </div>
-        <div
-          onClick={() => setFileExplorerOpening(false)}
-          className="p-2 hover:bg-red-400 rounded-[0.25rem]"
-        >
-          <Icons.effacer className="size-4 fill-white" />
+    <div className="title-bar">
+      <div className="w-full h-9 flex justify-between pl-2 relative">
+        <Tab />
+        <div className="flex items-center w-[132px]">
+          <div className="px-4 py-3 hover:bg-gray-600">
+            <Icons.windowMinimize className="size-3 fill-white" />
+          </div>
+          <div className="px-4 py-3 hover:bg-gray-600">
+            <Icons.windowMaximize className="size-3 fill-white" />
+          </div>
+          <div
+            onClick={() => setFileExplorerOpening(false)}
+            className="px-4 py-3 hover:bg-red-600"
+          >
+            <Icons.effacer className="size-3 fill-white" />
+          </div>
         </div>
       </div>
     </div>
