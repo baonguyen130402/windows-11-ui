@@ -40,20 +40,11 @@ export function separateDesktopLayout(
   }
 
   const desktopLayout = Array
-    .from(Array(row), (_, id) =>
+    .from(Array(row), () =>
       new Array(column)
-        .fill({ id: generateId(id), icon: "", title: "" }));
+        .fill({ id: 0, icon: "", title: "" }));
 
-  // const desktopLayout = Array(9).fill(Array(18).fill({ id: generateId(1) }));
-
-  // for (let i = 0; i < desktopLayout.length; i++) {
-  //   for (let j = 0; j < desktopLayout[i].length; j++) {
-  //     const id = generateId(j);
-  //     desktopLayout[0][1]["id"] = id;
-  //   }
-  // }
-
-  // console.log(desktopLayout);
+  console.log(desktopLayout);
 
   if (title !== "" && icon !== "") {
     icons.forEach((icon: any, id: number) => {
