@@ -64,7 +64,8 @@ button:focus-visible {
 }
 
 span,
-img {
+img,
+p {
   -webkit-user-select: none;
   /* Safari */
   -ms-user-select: none;
