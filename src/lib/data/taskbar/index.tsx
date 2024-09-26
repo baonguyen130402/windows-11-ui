@@ -1,25 +1,35 @@
-export const appsPinnedOnTaskbar = [
-  {
-    id: 1,
-    icon: <img src="/images/apps/copilot.png" />,
-    title: "copilot",
-  },
-  {
-    id: 2,
-    icon: <img src="/images/apps/firefox.png" />,
-    title: "firefox",
-  },
-  {
-    id: 3,
-    icon: <img src="/images/apps/edge.png" />,
-    title: "msEdge",
-  },
-  {
-    id: 4,
-    icon: <img src="/images/apps/folder.png" />,
-    title: "folder",
-  },
-];
+export function generateAppsPinnedOnTaskbar(
+  msEdgeOpening: boolean = false,
+  mzFirefoxOpening: boolean = false,
+  fileExplorerOpening: boolean = false,
+) {
+  return [
+    {
+      id: 1,
+      isOpening: false,
+      icon: <img src="/images/apps/copilot.png" />,
+      title: "copilot",
+    },
+    {
+      id: 2,
+      isOpening: mzFirefoxOpening,
+      icon: <img src="/images/apps/firefox.png" />,
+      title: "firefox",
+    },
+    {
+      id: 3,
+      isOpening: msEdgeOpening,
+      icon: <img src="/images/apps/edge.png" />,
+      title: "msEdge",
+    },
+    {
+      id: 4,
+      isOpening: fileExplorerOpening,
+      icon: <img src="/images/apps/folder.png" />,
+      title: "folder",
+    },
+  ];
+}
 
 export const buttonInControlSystem = [
   {
