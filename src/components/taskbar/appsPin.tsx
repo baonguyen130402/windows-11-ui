@@ -1,14 +1,17 @@
-import { useDragAndDrop } from "@formkit/drag-and-drop/react";
+import { useContext, useEffect } from "react";
+
 import { animations } from "@formkit/drag-and-drop";
+import { useDragAndDrop } from "@formkit/drag-and-drop/react";
 
 import { generateAppsPinnedOnTaskbar } from "../../lib/data/taskbar";
-import { useContext, useEffect } from "react";
 import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
 import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
 import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
 
 export function AppsPin() {
-  const { msEdgeOpening, setMsEdgeOpening } = useContext(MsEdgeContext);
+  const { msEdgeOpening, setMsEdgeOpening, setMsEdgeMinimize } = useContext(
+    MsEdgeContext,
+  );
   const { mzFirefoxOpening, setMzFirefoxOpening } = useContext(
     MzFirefoxContext,
   );
@@ -54,7 +57,8 @@ export function AppsPin() {
           ? (
             <li
               key={app.title}
-              className="relative p-1 bg-[rgba(255,255,255,.15)] rounded-[0.3em] flex items-center justify-center hover:w-10 hover:h-10 w-10 h-10 after:absolute after:bottom-0 after:w-2/5 after:h-[3px] after:bg-[#5bb5fc] after:rounded-full ease-in"
+              onClick={() => setMsEdgeMinimize(false)}
+              className="relative p-1 bg-[rgba(255,255,255,.15)] rounded-[0.3em] flex items-center justify-center hover:w-10 hover:h-10 w-10 h-10 after:absolute after:bottom-0 after:w-2/5 after:h-[3px] after:bg-[#5bb5fc] after:rounded-full ease-in group"
             >
               {app.icon}
             </li>

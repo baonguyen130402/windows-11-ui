@@ -3,8 +3,8 @@ import { Icons } from "../../../../lib/icons";
 import { Tab } from "./tab";
 import { MsEdgeContext } from "../../../../lib/contexts/MsEdgeContext";
 
-export function Header() {
-  const { setMsEdgeOpening } = useContext(MsEdgeContext);
+export function Header(props: any) {
+  const { setMsEdgeOpening, setMsEdgeMinimize } = useContext(MsEdgeContext);
 
   return (
     <div className="title-bar">
@@ -26,7 +26,10 @@ export function Header() {
           </div>
         </div>
         <div className="flex items-center w-[132px]">
-          <div className="p-4 hover:bg-gray-600 duration-100">
+          <div
+            onClick={() => setMsEdgeMinimize(true)}
+            className="p-4 hover:bg-gray-600 duration-100"
+          >
             <Icons.windowMinimize className="size-3 fill-white" />
           </div>
           <div className="p-4 hover:bg-gray-600 duration-100">
