@@ -40,7 +40,7 @@ export function Desktop() {
   const { msEdgeOpening, msEdgeMinimize, msEdgeMaximize } = useContext(
     MsEdgeContext,
   );
-  const { mzFirefoxOpening } = useContext(MzFirefoxContext);
+  const { mzFirefoxOpening, mzFirefoxMinimize, mzFirefoxMaximize } = useContext(MzFirefoxContext);
   const { fileExplorerOpening } = useContext(FileExplorerContext);
 
   const [parent, rows] = useDragAndDrop<HTMLUListElement, any>(
@@ -73,6 +73,11 @@ export function Desktop() {
             isOpen={msEdgeOpening}
             isMinimize={msEdgeMinimize}
             isMaximize={msEdgeMaximize}
+          />
+          <MzFirefox
+            isOpen={mzFirefoxOpening}
+            isMinimize={mzFirefoxMinimize}
+            isMaximize={mzFirefoxMaximize}
           />
         </div>
       </ContextMenuTrigger>
