@@ -1,10 +1,15 @@
-import Draggable from "react-draggable";
-import { Bookmark } from "./components/bookmark";
-import { Header } from "./components/header";
-import { Navbar } from "./components/navbar";
 import { useRef } from "react";
 
-export function MsEdge() {
+import clsx from "clsx";
+import Draggable from "react-draggable";
+
+import { Header } from "./components/header";
+import { Navbar } from "./components/navbar";
+import { Bookmark } from "./components/bookmark";
+
+export function MsEdge(props: any) {
+  const { isOpen, isMinimize, isMaximize, inMiniview = false } = props;
+
   const homeUrl = "https://google.com/webhp?igu=1";
   const explorerRef = useRef(null);
 
@@ -18,25 +23,36 @@ export function MsEdge() {
   };
 
   return (
-    <div className="w-full h-screen absolute">
-      <Draggable handle=".title-bar" nodeRef={explorerRef} bounds={bounds}>
-        <article
-          ref={explorerRef}
-          className="w-[72rem] h-[45rem] bg-gray-900/80 backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden"
-        >
-          <Header />
-          <div className="bg-[#3b3b3b]">
-            <Navbar />
-            <Bookmark />
-          </div>
-          <div className="content w-full h-full bg-[#202124]">
-            <iframe
-              src={homeUrl}
-              className="w-full h-full"
-            />
-          </div>
-        </article>
-      </Draggable>
-    </div>
+    <>
+      {isOpen && (
+        <Draggable handle=".title-bar" nodeRef={explorerRef} bounds={bounds}>
+          <article
+            ref={explorerRef}
+            className={clsx(
+              "backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden absolute",
+              {
+                "hidden": isMinimize,
+                "w-screen h-screen top-0 left-0": isMaximize,
+                "block w-[72rem] h-[45rem] bg-gray-900/80":
+                  isMinimize === false || isMaximize === false,
+                "w-[114px] h-[120px] bg-white": inMiniview,
+              },
+            )}
+          >
+            <Header />
+            <div className="bg-[#3b3b3b]">
+              <Navbar />
+              <Bookmark />
+            </div>
+            <div className="content w-full h-full bg-[#202124]">
+              <iframe
+                src={homeUrl}
+                className="w-full h-full"
+              />
+            </div>
+          </article>
+        </Draggable>
+      )}
+    </>
   );
 }

@@ -1,6 +1,7 @@
+import { useContext } from "react";
+
 import { swap } from "@formkit/drag-and-drop";
 import { useDragAndDrop } from "@formkit/drag-and-drop/react";
-import { useContext, useState } from "react";
 
 import {
   ContextMenu,
@@ -36,7 +37,9 @@ const IconsArr = [
 export function Desktop() {
   const array = separateDesktopLayout(IconsArr);
 
-  const { msEdgeOpening } = useContext(MsEdgeContext);
+  const { msEdgeOpening, msEdgeMinimize, msEdgeMaximize } = useContext(
+    MsEdgeContext,
+  );
   const { mzFirefoxOpening } = useContext(MzFirefoxContext);
   const { fileExplorerOpening } = useContext(FileExplorerContext);
 
@@ -51,23 +54,27 @@ export function Desktop() {
   return (
     <ContextMenu>
       <ContextMenuTrigger>
-        <ul
-          className="w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5"
-          ref={parent}
-        >
-          {rows.map((row: any) => (
-            row.map((item: any) => (
-              <Icon
-                key={item.title}
-                title={item.title}
-                icon={item.icon}
-              />
-            ))
-          ))}
-          {msEdgeOpening && <MsEdge />}
-          {mzFirefoxOpening && <MzFirefox />}
-          {fileExplorerOpening && <FileExplorer />}
-        </ul>
+        <div className="w-full h-full absolute">
+          <ul
+            className="w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5 absolute"
+            ref={parent}
+          >
+            {rows.map((row: any) => (
+              row.map((item: any) => (
+                <Icon
+                  key={item.title}
+                  title={item.title}
+                  icon={item.icon}
+                />
+              ))
+            ))}
+          </ul>
+          <MsEdge
+            isOpen={msEdgeOpening}
+            isMinimize={msEdgeMinimize}
+            isMaximize={msEdgeMaximize}
+          />
+        </div>
       </ContextMenuTrigger>
       <ContextContent />
     </ContextMenu>

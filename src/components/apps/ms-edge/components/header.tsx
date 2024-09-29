@@ -4,7 +4,7 @@ import { Tab } from "./tab";
 import { MsEdgeContext } from "../../../../lib/contexts/MsEdgeContext";
 
 export function Header(props: any) {
-  const { setMsEdgeOpening, setMsEdgeMinimize } = useContext(MsEdgeContext);
+  const { setMsEdgeOpening, setMsEdgeMinimize, msEdgeMaximize, setMsEdgeMaximize } = useContext(MsEdgeContext);
 
   return (
     <div className="title-bar">
@@ -32,7 +32,9 @@ export function Header(props: any) {
           >
             <Icons.windowMinimize className="size-3 fill-white" />
           </div>
-          <div className="p-4 hover:bg-gray-600 duration-100">
+          <div 
+            onClick={() => setMsEdgeMaximize(!msEdgeMaximize)}
+            className="p-4 hover:bg-gray-600 duration-100">
             <Icons.windowMaximize className="size-3 fill-white" />
           </div>
           <div
