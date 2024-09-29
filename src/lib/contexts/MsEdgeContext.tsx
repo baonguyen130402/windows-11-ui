@@ -4,9 +4,9 @@ interface Props {
   msEdgeOpening: boolean;
   setMsEdgeOpening: (isOpening: boolean) => void;
   msEdgeMinimize: boolean;
-  setMsEdgeMinimize: (isOpening: boolean) => void;
+  setMsEdgeMinimize: (isMinimize: boolean) => void;
   msEdgeMaximize: boolean;
-  setMsEdgeMaximize: (isOpening: boolean) => void;
+  setMsEdgeMaximize: (isMaximize: boolean) => void;
 }
 
 export const MsEdgeContext = createContext<Props>({

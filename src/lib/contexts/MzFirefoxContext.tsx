@@ -4,9 +4,9 @@ interface Props {
   mzFirefoxOpening: boolean;
   setMzFirefoxOpening: (isOpening: boolean) => void;
   mzFirefoxMinimize: boolean;
-  setMzFirefoxMinimize: (isOpening: boolean) => void;
+  setMzFirefoxMinimize: (isMinimize: boolean) => void;
   mzFirefoxMaximize: boolean;
-  setMzFirefoxMaximize: (isOpening: boolean) => void;
+  setMzFirefoxMaximize: (isMaximize: boolean) => void;
 }
 
 export const MzFirefoxContext = createContext<Props>({

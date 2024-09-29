@@ -4,9 +4,9 @@ interface Props {
   fileExplorerOpening: boolean;
   setFileExplorerOpening: (isOpening: boolean) => void;
   fileExplorerMinimizie: boolean;
-  setFileExplorerMinimize: (isOpening: boolean) => void;
+  setFileExplorerMinimize: (isMinimize: boolean) => void;
   fileExplorerMaximize: boolean;
-  setFileExplorerMaximize: (isOpening: boolean) => void;
+  setFileExplorerMaximize: (isMaximize: boolean) => void;
 }
 
 export const FileExplorerContext = createContext<Props>({
