@@ -1,10 +1,11 @@
-import { useContext } from "react";
-import { Icons } from "../../../../lib/icons";
 import { Tab } from "./tab";
-import { MsEdgeContext } from "../../../../lib/contexts/MsEdgeContext";
+import { Icons } from "../../../../lib/icons";
+import { TriggerAppFormTitleBar } from "../../../../lib/utilities/titleBar";
 
-export function Header() {
-  const { setMsEdgeOpening } = useContext(MsEdgeContext);
+export function Header(props: any) {
+  const { closeApp, maximizeApp, minimizeApp } = TriggerAppFormTitleBar(
+    "msEdge",
+  );
 
   return (
     <div className="title-bar">
@@ -26,14 +27,20 @@ export function Header() {
           </div>
         </div>
         <div className="flex items-center w-[132px]">
-          <div className="p-4 hover:bg-gray-600 duration-100">
+          <div
+            onClick={() => closeApp()}
+            className="p-4 hover:bg-gray-600 duration-100"
+          >
             <Icons.windowMinimize className="size-3 fill-white" />
           </div>
-          <div className="p-4 hover:bg-gray-600 duration-100">
+          <div
+            onClick={() => maximizeApp()}
+            className="p-4 hover:bg-gray-600 duration-100"
+          >
             <Icons.windowMaximize className="size-3 fill-white" />
           </div>
           <div
-            onClick={() => setMsEdgeOpening(false)}
+            onClick={() => minimizeApp()}
             className="p-4 hover:bg-red-600 rounded-tr-[0.25rem]"
           >
             <Icons.effacer className="size-3 fill-white" />
