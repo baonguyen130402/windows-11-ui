@@ -4,17 +4,28 @@ import { Tab } from "./tab";
 import { FileExplorerContext } from "../../../../lib/contexts/FileExplorerContext";
 
 export function Header() {
-  const { setFileExplorerOpening } = useContext(FileExplorerContext);
+  const {
+    setFileExplorerOpening,
+    setFileExplorerMinimize,
+    setFileExplorerMaximize,
+    fileExplorerMaximize,
+  } = useContext(FileExplorerContext);
 
   return (
     <div className="title-bar">
       <div className="w-full h-9 flex justify-between pl-2 relative">
         <Tab />
         <div className="flex items-center w-[132px]">
-          <div className="px-4 py-3 hover:bg-gray-600">
+          <div
+            onClick={() => setFileExplorerMinimize(true)}
+            className="px-4 py-3 hover:bg-gray-600"
+          >
             <Icons.windowMinimize className="size-3 fill-white" />
           </div>
-          <div className="px-4 py-3 hover:bg-gray-600">
+          <div
+            onClick={() => setFileExplorerMaximize(!fileExplorerMaximize)}
+            className="px-4 py-3 hover:bg-gray-600"
+          >
             <Icons.windowMaximize className="size-3 fill-white" />
           </div>
           <div
