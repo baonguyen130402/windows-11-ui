@@ -8,52 +8,21 @@ import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
 import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
 import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
 import { MiniView } from "../../lib/utilities/miniView";
+import { TriggerAppsFromTaksbar } from "../../lib/utilities/taskbar";
 
 export function AppsPin() {
-  const { msEdgeOpening, setMsEdgeOpening, setMsEdgeMinimize } = useContext(
-    MsEdgeContext,
-  );
-  const { mzFirefoxOpening, setMzFirefoxOpening } = useContext(
-    MzFirefoxContext,
-  );
-  const { fileExplorerOpening, setFileExplorerOpening } = useContext(
-    FileExplorerContext,
-  );
-
   const appsPinned = generateAppsPinnedOnTaskbar();
 
   const [parent, apps, setApps] = useDragAndDrop<HTMLUListElement, any>(
     appsPinned,
     { plugins: [animations()] },
   );
+  
+  const { msEdgeOpening } = useContext(MsEdgeContext);
+  const { mzFirefoxOpening } = useContext(MzFirefoxContext);
+  const {fileExplorerOpening} = useContext(FileExplorerContext);
 
-  function openFromTaskbar(app: String) {
-    if (app === "msEdge") {
-      setMsEdgeOpening(true);
-    }
-
-    if (app === "firefox") {
-      setMzFirefoxOpening(true);
-    }
-
-    if (app === "folder") {
-      setFileExplorerOpening(true);
-    }
-  }
-
-  function openMinimizedAppFromTaskbar(app: String) {
-    if (app === "msEdge") {
-      setMsEdgeMinimize(false);
-    }
-
-    if (app === "firefox") {
-      // setMzFirefoxOpening(true);
-    }
-
-    if (app === "folder") {
-      // setFileExplorerOpening(true);
-    }
-  }
+  const { openNewApp, openMinimizedApp } = TriggerAppsFromTaksbar();
 
   useEffect(() => {
     setApps(
@@ -72,17 +41,17 @@ export function AppsPin() {
           ? (
             <li
               key={app.title}
-              onClick={() => openMinimizedAppFromTaskbar(app.title)}
+              onClick={() => openMinimizedApp(app.title)}
               className="relative p-1 bg-[rgba(255,255,255,.15)] rounded-[0.3em] flex items-center justify-center hover:w-10 hover:h-10 w-10 h-10 after:absolute after:bottom-0 after:w-2/5 after:h-[3px] after:bg-[#5bb5fc] after:rounded-full ease-in group"
             >
-              <MiniView />
+              <MiniView appHover={app.title} />
               {app.icon}
             </li>
           )
           : (
             <li
               key={app.title}
-              onClick={() => openFromTaskbar(app.title)}
+              onClick={() => openNewApp(app.title)}
               className="p-1 hover:bg-[rgba(255,255,255,.15)] hover:rounded-[0.25rem] flex items-center justify-center hover:w-10 hover:h-10 w-10 h-10"
             >
               {app.icon}
