@@ -1,8 +1,10 @@
+import { useRef } from "react";
+
 import Draggable from "react-draggable";
+
 import { Bookmark } from "./components/bookmark";
 import { Header } from "./components/header";
 import { Navbar } from "./components/navbar";
-import { useRef } from "react";
 
 export function MsEdge() {
   const homeUrl = "https://google.com/webhp?igu=1";
