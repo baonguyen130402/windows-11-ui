@@ -22,7 +22,7 @@ export function MsEdge() {
       <Draggable handle=".title-bar" nodeRef={explorerRef} bounds={bounds}>
         <article
           ref={explorerRef}
-          className="w-[72rem] h-[45rem] bg-gray-900/80 backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden"
+          className="w-[72rem] h-[45rem] backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden border border-[#2c3246]"
         >
           <Header />
           <div className="bg-[#3b3b3b]">
