@@ -29,7 +29,7 @@ export function MsEdge(props: any) {
           <article
             ref={explorerRef}
             className={clsx(
-              "backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden absolute",
+              "backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden absolute border border-[#2c3246]",
               {
                 "hidden": isMinimize,
                 "w-screen h-screen rounded-none": isMaximize,
