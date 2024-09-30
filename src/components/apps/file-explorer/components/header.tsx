@@ -9,7 +9,7 @@ export function Header() {
 
   return (
     <div className="title-bar">
-      <div className="w-full h-9 flex justify-between pl-2 relative">
+      <div className="w-full h-9 flex justify-between pl-2 bg-[#020d1d] relative">
         <Tab />
         <div className="flex items-center w-[132px]">
           <div
