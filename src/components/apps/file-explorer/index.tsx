@@ -26,11 +26,11 @@ export function FileExplorer(props: any) {
           <article
             ref={explorerRef}
             className={clsx(
-              "backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden",
+              "backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden border border-[#2c3246]",
               {
                 "hidden": isMinimize,
                 "w-screen h-screen rounded-none": isMaximize,
-                "block w-[1000px] h-[600px] bg-[#1f1f1f]":
+                "block w-[1000px] h-[600px]":
                   isMinimize === false || isMaximize === false,
                 "w-[114px] h-[120px] bg-white": inMiniview,
               },
