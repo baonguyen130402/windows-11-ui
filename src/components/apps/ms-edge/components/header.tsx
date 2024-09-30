@@ -28,7 +28,7 @@ export function Header(props: any) {
         </div>
         <div className="flex items-center w-[132px]">
           <div
-            onClick={() => closeApp()}
+            onClick={() => minimizeApp()}
             className="p-4 hover:bg-gray-600 duration-100"
           >
             <Icons.windowMinimize className="size-3 fill-white" />
@@ -40,8 +40,8 @@ export function Header(props: any) {
             <Icons.windowMaximize className="size-3 fill-white" />
           </div>
           <div
-            onClick={() => minimizeApp()}
-            className="p-4 hover:bg-red-600 rounded-tr-[0.25rem]"
+            onClick={() => closeApp()}
+            className="p-4 hover:bg-red-600"
           >
             <Icons.effacer className="size-3 fill-white" />
           </div>

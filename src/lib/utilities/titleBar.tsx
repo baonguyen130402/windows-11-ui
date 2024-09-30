@@ -32,24 +32,36 @@ export function TriggerAppFormTitleBar(app: String) {
   function closeApp() {
     if (app === "msEdge") {
       setMsEdgeOpening(false);
+
+      if (msEdgeMaximize) {
+        setMsEdgeMaximize(false)
+      }
     }
 
     if (app === "mzFirefox") {
       setMzFirefoxOpening(false);
+      
+      if (mzFirefoxMaximize) {
+        setMzFirefoxMaximize(false)
+      }
     }
 
     if (app === "fileExplorer") {
       setFileExplorerOpening(false);
+      
+      if (fileExplorerMaximize) {
+        setFileExplorerMaximize(false)
+      }
     }
   }
 
   function minimizeApp() {
     if (app === "msEdge") {
-      setMsEdgeMinimize(false);
+      setMsEdgeMinimize(true);
     }
 
     if (app === "mzFirefox") {
-      setMzFirefoxMinimize(false);
+      setMzFirefoxMinimize(true);
     }
 
     if (app === "fileExplorer") {

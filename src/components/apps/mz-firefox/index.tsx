@@ -30,7 +30,7 @@ export function MzFirefox(props: any) {
               "rounded-[0.5rem] overflow-hidden",
               {
                 "hidden": isMinimize,
-                "w-screen h-screen top-0 left-0": isMaximize,
+                "w-screen h-screen rounded-none": isMaximize,
                 "block w-[72rem] h-[45rem] bg-gray-900/80":
                   isMinimize === false || isMaximize === false,
                 "w-[114px] h-[120px] bg-white": inMiniview,

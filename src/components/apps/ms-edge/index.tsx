@@ -32,8 +32,8 @@ export function MsEdge(props: any) {
               "backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden absolute",
               {
                 "hidden": isMinimize,
-                "w-screen h-screen top-0 left-0": isMaximize,
-                "block w-[72rem] h-[45rem] bg-gray-900/80":
+                "w-screen h-screen rounded-none": isMaximize,
+                "block w-[72rem] h-[45rem]":
                   isMinimize === false || isMaximize === false,
                 "w-[114px] h-[120px] bg-white": inMiniview,
               },
