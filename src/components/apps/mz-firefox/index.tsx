@@ -27,7 +27,7 @@ export function MzFirefox(props: any) {
           <article
             ref={explorerRef}
             className={clsx(
-              "rounded-[0.5rem] overflow-hidden",
+              "rounded-[0.5rem] overflow-hidden border border-[#2c3246]",
               {
                 "hidden": isMinimize,
                 "w-screen h-screen rounded-none": isMaximize,
