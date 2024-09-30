@@ -29,12 +29,12 @@ export function MsEdge(props: any) {
           <article
             ref={explorerRef}
             className={clsx(
-              "backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden absolute",
+              "backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden absolute border border-[#2c3246]",
               {
                 "hidden": isMinimize,
                 "w-screen h-screen rounded-none": isMaximize,
-                "block w-[72rem] h-[45rem]":
-                  isMinimize === false || isMaximize === false,
+                "block w-[72rem] h-[45rem]": isMinimize === false ||
+                  isMaximize === false,
                 "w-[114px] h-[120px] bg-white": inMiniview,
               },
             )}
