@@ -41,7 +41,7 @@ export function Header(props: any) {
           </div>
           <div
             onClick={() => closeApp()}
-            className="p-4 hover:bg-red-600 rounded-tr-[0.25rem]"
+            className="p-4 hover:bg-red-600"
           >
             <Icons.effacer className="size-3 fill-white" />
           </div>

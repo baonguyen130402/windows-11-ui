@@ -29,7 +29,7 @@ export function FileExplorer(props: any) {
               "backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden",
               {
                 "hidden": isMinimize,
-                "w-screen h-screen top-0 left-0": isMaximize,
+                "w-screen h-screen rounded-none": isMaximize,
                 "block w-[1000px] h-[600px] bg-[#1f1f1f]":
                   isMinimize === false || isMaximize === false,
                 "w-[114px] h-[120px] bg-white": inMiniview,
