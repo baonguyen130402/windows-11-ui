@@ -77,15 +77,15 @@ export function Desktop() {
             isMinimize={msEdgeMinimize}
             isMaximize={msEdgeMaximize}
           />
-          <MzFirefox
-            isOpen={mzFirefoxOpening}
-            isMinimize={mzFirefoxMinimize}
-            isMaximize={mzFirefoxMaximize}
-          />
           <FileExplorer
             isOpen={fileExplorerOpening}
             isMinimize={fileExplorerMinimizie}
             isMaximize={fileExplorerMaximize}
+          />
+          <MzFirefox
+            isOpen={mzFirefoxOpening}
+            isMinimize={mzFirefoxMinimize}
+            isMaximize={mzFirefoxMaximize}
           />
         </div>
       </ContextMenuTrigger>
