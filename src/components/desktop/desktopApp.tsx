@@ -26,15 +26,16 @@ export function DesktopApp(props: any) {
   );
 
   function handleDoubleClick(icon: string) {
-    if (icon === "Firefox") {
+    console.log(icon);
+    if (icon === "firefox") {
       setMzFirefoxOpening(true);
     }
 
-    if (icon === "Edge") {
+    if (icon === "msEdge") {
       setMsEdgeOpening(true);
     }
 
-    if (icon === "Folder") {
+    if (icon === "folder") {
       setFileExplorerOpening(true);
     }
   }
