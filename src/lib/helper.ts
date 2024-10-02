@@ -44,8 +44,6 @@ export function separateDesktopLayout(
       new Array(column)
         .fill({ id: 0, icon: "", title: "" }));
 
-  console.log(desktopLayout);
-
   if (title !== "" && icon !== "") {
     icons.forEach((icon: any, id: number) => {
       desktopLayout[id][0] = icon;
