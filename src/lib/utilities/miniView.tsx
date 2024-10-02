@@ -15,7 +15,7 @@ export function MiniView(props: any) {
   const { fileExplorerOpening } = useContext(FileExplorerContext);
 
   return (
-    <div className="absolute hidden w-[130px] h-[150px] bg-[#1d1d1d] bottom-[55px] rounded-[0.3em] p-[0.5em] group-hover:block flex-col items-center gap-y-2">
+    <div className="absolute hidden w-[130px] h-[150px] bg-[#1d1d1d] bottom-[55px] rounded-[0.3em] p-[0.5em] group-hover:block group-active:invisible flex-col items-center gap-y-2">
       {appHover === "msEdge" && (
         <MsEdge isOpen={msEdgeOpening} inMiniview={true} />
       )}

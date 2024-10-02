@@ -17,10 +17,10 @@ export function AppsPin() {
     appsPinned,
     { plugins: [animations()] },
   );
-  
+
   const { msEdgeOpening } = useContext(MsEdgeContext);
   const { mzFirefoxOpening } = useContext(MzFirefoxContext);
-  const {fileExplorerOpening} = useContext(FileExplorerContext);
+  const { fileExplorerOpening } = useContext(FileExplorerContext);
 
   const { openNewApp, openMinimizedApp } = TriggerAppsFromTaksbar();
 
@@ -52,7 +52,7 @@ export function AppsPin() {
             <li
               key={app.title}
               onClick={() => openNewApp(app.title)}
-              className="p-1 hover:bg-[rgba(255,255,255,.15)] hover:rounded-[0.25rem] flex items-center justify-center hover:w-10 hover:h-10 w-10 h-10"
+              className="p-1 hover:bg-[rgba(255,255,255,.15)] hover:rounded-[0.25rem] flex items-center justify-center hover:w-10 hover:h-10 w-10 h-10 active:bg-white"
             >
               {app.icon}
             </li>
