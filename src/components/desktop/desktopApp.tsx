@@ -4,7 +4,7 @@ import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
 import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
 import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
 
-export function Icon(props: any) {
+export function DesktopApp(props: any) {
   const {
     title,
     icon,

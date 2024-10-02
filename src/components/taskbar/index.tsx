@@ -25,11 +25,11 @@ export function Taskbar() {
       className={clsx(
         "grid grid-cols-4 gap-x-2 items-center fixed bottom-0 left-0 right-0 py-0.5 px-2.5 backdrop-blur-2xl bg-[rgba(0,0,0,.45)] w-screen h-12 border-t border-slate-600",
         {
-          "hidden": (msEdgeMaximize && msEdgeMinimize === false) ||
-            (mzFirefoxMaximize && mzFirefoxMinimize === false) ||
-            (fileExplorerMaximize && fileExplorerMinimizie === false),
-          "block": msEdgeMaximize === false || mzFirefoxMaximize === false ||
-            fileExplorerMaximize === false ||
+          "hidden": (msEdgeMaximize && !msEdgeMinimize) ||
+            (mzFirefoxMaximize && !mzFirefoxMinimize) ||
+            (fileExplorerMaximize && !fileExplorerMinimizie),
+          "block": !msEdgeMaximize || !mzFirefoxMaximize ||
+            !fileExplorerMaximize ||
             (msEdgeMaximize && msEdgeMinimize) ||
             (mzFirefoxMaximize && mzFirefoxMinimize) ||
             (fileExplorerMaximize && fileExplorerMinimizie),
