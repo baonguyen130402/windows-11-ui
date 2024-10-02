@@ -2,13 +2,14 @@ import { useContext } from "react";
 
 import clsx from "clsx";
 
-import { AppsPin } from "./appsPin";
-import { HomeBtn } from "./homeBtn";
-import { Weather } from "./weather";
-import { DateTime } from "./dateTime";
-import { SearchBtn } from "./searchBtn";
-import { ControlCenter } from "./controlCenter";
-import { SystemIconTray } from "./systemIconTray";
+import { AppsPin } from "./components/appsPin";
+import { HomeBtn } from "./components/homeBtn";
+import { Weather } from "./components/weather";
+import { DateTime } from "./components/dateTime";
+import { SearchBtn } from "./components/searchBtn";
+import { ControlCenter } from "./components/controlCenter";
+import { SystemIconTray } from "./components/systemIconTray";
+
 import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
 import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
 import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
