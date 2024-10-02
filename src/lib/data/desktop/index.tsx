@@ -2,15 +2,6 @@ export const appsOnDesktop = [
   {
     icon: (
       <img
-        src="/images/apps/copilot.png"
-        className="size-12 justify-self-center"
-      />
-    ),
-    title: "copilot",
-  },
-  {
-    icon: (
-      <img
         src="/images/apps/firefox.png"
         className="size-12 justify-self-center"
       />
