@@ -7,35 +7,22 @@ import {
   ContextMenu,
   ContextMenuTrigger,
 } from "../../lib/components/ui/context-menu";
-import { Icon } from "./icon";
-import { Icons } from "../../lib/icons";
-import { separateDesktopLayout } from "../../lib/helper";
+import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
+import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
+import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
+
+import { DesktopApp } from "./desktopApp";
+
+import { MsEdge } from "../apps/ms-edge";
 import { MzFirefox } from "../apps/mz-firefox";
 import { ContextContent } from "./contextMenu";
 import { FileExplorer } from "../apps/file-explorer";
-import { MsEdge } from "../apps/ms-edge";
 
-import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
-import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
-import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
-
-const IconsArr = [
-  {
-    title: "Folder",
-    icon: <Icons.folder className="size-12 justify-self-center" />,
-  },
-  {
-    title: "Firefox",
-    icon: <Icons.firefox className="size-11 justify-self-center" />,
-  },
-  {
-    title: "Edge",
-    icon: <Icons.msEdge className="size-12 justify-self-center" />,
-  },
-];
+import { appsOnDesktop } from "../../lib/data/desktop";
+import { separateDesktopLayout } from "../../lib/helper";
 
 export function Desktop() {
-  const array = separateDesktopLayout(IconsArr);
+  const apps = separateDesktopLayout(appsOnDesktop);
 
   const { msEdgeOpening, msEdgeMinimize, msEdgeMaximize } = useContext(
     MsEdgeContext,
@@ -46,8 +33,8 @@ export function Desktop() {
   const { fileExplorerOpening, fileExplorerMinimizie, fileExplorerMaximize } =
     useContext(FileExplorerContext);
 
-  const [parent, rows] = useDragAndDrop<HTMLUListElement, any>(
-    array,
+  const [parent, desktopApps] = useDragAndDrop<HTMLUListElement, any>(
+    apps,
     {
       group: "parent",
       plugins: [swap()],
@@ -62,12 +49,12 @@ export function Desktop() {
             className="w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5 absolute"
             ref={parent}
           >
-            {rows.map((row: any) => (
-              row.map((item: any) => (
-                <Icon
-                  key={item.title}
-                  title={item.title}
-                  icon={item.icon}
+            {desktopApps.map((apps: any) => (
+              apps.map((app: any) => (
+                <DesktopApp
+                  key={app.title}
+                  title={app.title}
+                  icon={app.icon}
                 />
               ))
             ))}
