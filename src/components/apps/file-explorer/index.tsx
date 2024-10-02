@@ -1,11 +1,11 @@
 import { useRef } from "react";
 
 import clsx from "clsx";
-
-import { Container } from "./components/container";
-import { Header } from "./components/header";
 import Draggable from "react-draggable";
+
+import { Header } from "./components/header";
 import { Navbar } from "./components/navbar";
+import { Container } from "./components/container";
 import { RenderIf } from "../../../lib/utilities/renderIf";
 
 export function FileExplorer(props: any) {
