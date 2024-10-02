@@ -9,6 +9,7 @@ import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
 import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
 import { MiniView } from "../../lib/utilities/miniView";
 import { TriggerAppsFromTaksbar } from "../../lib/utilities/taskbar";
+import { RenderIf } from "../../lib/utilities/renderIf";
 
 export function AppsPin() {
   const appsPinned = generateAppsPinnedOnTaskbar();
@@ -17,10 +18,10 @@ export function AppsPin() {
     appsPinned,
     { plugins: [animations()] },
   );
-  
+
   const { msEdgeOpening } = useContext(MsEdgeContext);
   const { mzFirefoxOpening } = useContext(MzFirefoxContext);
-  const {fileExplorerOpening} = useContext(FileExplorerContext);
+  const { fileExplorerOpening } = useContext(FileExplorerContext);
 
   const { openNewApp, openMinimizedApp } = TriggerAppsFromTaksbar();
 
@@ -37,8 +38,8 @@ export function AppsPin() {
   return (
     <ul className="flex items-center gap-x-1" ref={parent}>
       {apps.map((app: any) => (
-        app.isOpening
-          ? (
+        <>
+          <RenderIf isTrue={app.isOpening}>
             <li
               key={app.title}
               onClick={() => openMinimizedApp(app.title)}
@@ -47,8 +48,8 @@ export function AppsPin() {
               <MiniView appHover={app.title} />
               {app.icon}
             </li>
-          )
-          : (
+          </RenderIf>
+          <RenderIf isTrue={!app.isOpening}>
             <li
               key={app.title}
               onClick={() => openNewApp(app.title)}
@@ -56,7 +57,8 @@ export function AppsPin() {
             >
               {app.icon}
             </li>
-          )
+          </RenderIf>
+        </>
       ))}
     </ul>
   );
