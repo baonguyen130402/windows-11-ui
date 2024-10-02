@@ -7,17 +7,18 @@ import {
   ContextMenu,
   ContextMenuTrigger,
 } from "../../lib/components/ui/context-menu";
+import { ContextContent } from "./contextMenu";
+
 import { Icon } from "./icon";
 import { Icons } from "../../lib/icons";
-import { separateDesktopLayout } from "../../lib/helper";
-import { MzFirefox } from "../apps/mz-firefox";
-import { ContextContent } from "./contextMenu";
-import { FileExplorer } from "../apps/file-explorer";
 import { MsEdge } from "../apps/ms-edge";
+import { MzFirefox } from "../apps/mz-firefox";
+import { FileExplorer } from "../apps/file-explorer";
+import { separateDesktopLayout } from "../../lib/helper";
 
+import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
 import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
 import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
-import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
 
 const IconsArr = [
   {
