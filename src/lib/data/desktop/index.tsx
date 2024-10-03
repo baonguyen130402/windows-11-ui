@@ -6,7 +6,7 @@ export const appsOnDesktop = [
         className="size-12 justify-self-center"
       />
     ),
-    title: "firefox",
+    title: "Firefox",
   },
   {
     icon: (
@@ -15,7 +15,7 @@ export const appsOnDesktop = [
         className="size-12 justify-self-center"
       />
     ),
-    title: "msEdge",
+    title: "Edge",
   },
   {
     icon: (
@@ -24,6 +24,6 @@ export const appsOnDesktop = [
         className="size-12 justify-self-center"
       />
     ),
-    title: "folder",
+    title: "Folder",
   },
 ];
