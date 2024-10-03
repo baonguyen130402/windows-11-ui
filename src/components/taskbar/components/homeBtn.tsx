@@ -7,9 +7,9 @@ import { useDragAndDrop } from "@formkit/drag-and-drop/react";
 import {
   appsInStartMenu,
   appsRecentOpennedInStartMenu,
-} from "../../lib/data/taskbar";
-import { Icons } from "../../lib/icons";
-import { Input } from "../../lib/components/ui/input";
+} from "../../../lib/data/taskbar";
+import { Icons } from "../../../lib/icons";
+import { Input } from "../../../lib/components/ui/input";
 
 export function StartMenu(props: any) {
   const { isOpen } = props;

@@ -2,11 +2,11 @@ import { useContext, useState } from "react";
 
 import clsx from "clsx";
 
-import { Icons } from "../../lib/icons";
+import { Icons } from "../../../lib/icons";
 import { SunIcon } from "@radix-ui/react-icons";
-import { Slider } from "../../lib/components/ui/slider";
-import { buttonInControlSystem } from "../../lib/data/taskbar";
-import { BrightnessContext } from "../../lib/contexts/BrightnessContext";
+import { Slider } from "../../../lib/components/ui/slider";
+import { buttonInControlSystem } from "../../../lib/data/taskbar";
+import { BrightnessContext } from "../../../lib/contexts/BrightnessContext";
 
 export function Modal(props: any) {
   const { isOpen } = props;

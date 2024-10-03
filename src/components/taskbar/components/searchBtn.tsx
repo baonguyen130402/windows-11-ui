@@ -1,5 +1,5 @@
-import { Icons } from "../../lib/icons";
-import { Input } from "../../lib/components/ui/input";
+import { Icons } from "../../../lib/icons";
+import { Input } from "../../../lib/components/ui/input";
 
 export function SearchBtn() {
   return (

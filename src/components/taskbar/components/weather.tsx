@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { Icons } from "../../lib/icons";
-import { getWeather } from "../../lib/helper";
+import { Icons } from "../../../lib/icons";
+import { getWeather } from "../../../lib/helper";
 
 interface IWeather {
   temperature: number;

@@ -3,13 +3,15 @@ import { useContext, useEffect } from "react";
 import { animations } from "@formkit/drag-and-drop";
 import { useDragAndDrop } from "@formkit/drag-and-drop/react";
 
-import { generateAppsPinnedOnTaskbar } from "../../lib/data/taskbar";
-import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
-import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
-import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
-import { MiniView } from "../../lib/utilities/miniView";
-import { TriggerAppsFromTaksbar } from "../../lib/utilities/taskbar";
-import { RenderIf } from "../../lib/utilities/renderIf";
+import { generateAppsPinnedOnTaskbar } from "../../../lib/data/taskbar";
+
+import { MsEdgeContext } from "../../../lib/contexts/MsEdgeContext";
+import { MzFirefoxContext } from "../../../lib/contexts/MzFirefoxContext";
+import { FileExplorerContext } from "../../../lib/contexts/FileExplorerContext";
+
+import { MiniView } from "../../../lib/utilities/miniView";
+import { RenderIf } from "../../../lib/utilities/renderIf";
+import { TriggerAppsFromTaksbar } from "../../../lib/utilities/taskbar";
 
 export function AppsPin() {
   const appsPinned = generateAppsPinnedOnTaskbar();

@@ -12,7 +12,7 @@ import {
   ContextMenuSubTrigger,
 } from "../../lib/components/ui/context-menu";
 import { Icons } from "../../lib/icons";
-import { Icon } from "./icon";
+import { DesktopApp } from "./icon";
 
 export function ContextContent() {
   return (
