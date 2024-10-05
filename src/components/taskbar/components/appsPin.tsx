@@ -55,7 +55,7 @@ export function AppsPin() {
             <li
               key={app.title}
               onClick={() => openNewApp(app.title)}
-              className="p-1 hover:bg-[rgba(255,255,255,.15)] hover:rounded-[0.25rem] flex items-center justify-center hover:w-10 hover:h-10 w-10 h-10 active:bg-white"
+              className="p-1 hover:bg-[rgba(255,255,255,.15)] hover:rounded-[0.25rem] flex items-center justify-center hover:w-10 hover:h-10 w-10 h-10 active:bg-[rgb(255,255,255,.3)]"
             >
               {app.icon}
             </li>
