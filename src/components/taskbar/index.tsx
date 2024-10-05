@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import clsx from "clsx";
 
@@ -6,6 +6,7 @@ import { AppsPin } from "./components/appsPin";
 import { HomeBtn } from "./components/homeBtn";
 import { Weather } from "./components/weather";
 import { DateTime } from "./components/dateTime";
+import { StartMenu } from "./components/startMenu";
 import { SearchBtn } from "./components/searchBtn";
 import { ControlCenter } from "./components/controlCenter";
 import { SystemIconTray } from "./components/systemIconTray";
@@ -20,6 +21,10 @@ export function Taskbar() {
   const { fileExplorerMaximize, fileExplorerMinimizie } = useContext(
     FileExplorerContext,
   );
+
+  const [state, setState] = useState(false);
+  
+  const setStateFromChild = (value: boolean) => setState(value);
 
   return (
     <section
@@ -40,10 +45,11 @@ export function Taskbar() {
       <div className="col-start-1 w-[270px] flex">
         <Weather />
       </div>
-      <div className="flex items-center justify-self-center col-start-2 col-span-2 gap-x-1">
-        <HomeBtn />
+      <div className="flex items-center justify-self-center col-start-2 col-span-2 gap-x-1 relative">
+        <HomeBtn openStartMenu={state} setOpenStartMenu={setStateFromChild} />
         <SearchBtn />
         <AppsPin />
+        <StartMenu isOpen={state} />
       </div>
       <div className="flex items-center justify-self-end col-start-4">
         <SystemIconTray />
