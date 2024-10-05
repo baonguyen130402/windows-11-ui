@@ -1,5 +1,7 @@
-import clsx from "clsx";
 import { useContext } from "react";
+
+import clsx from "clsx";
+
 import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
 import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
 import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
@@ -26,16 +28,15 @@ export function DesktopApp(props: any) {
   );
 
   function handleDoubleClick(icon: string) {
-    console.log(icon);
-    if (icon === "firefox") {
+    if (icon === "Firefox") {
       setMzFirefoxOpening(true);
     }
 
-    if (icon === "msEdge") {
+    if (icon === "Edge") {
       setMsEdgeOpening(true);
     }
 
-    if (icon === "folder") {
+    if (icon === "Folder") {
       setFileExplorerOpening(true);
     }
   }
