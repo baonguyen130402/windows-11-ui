@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 import { Taskbar } from "./taskbar";
 import { Desktop } from "./desktop";
-import Wallpaper from "../assets/wallpaper.jpg";
+import Wallpaper from "../assets/0light.jpg";
 import { genarateBrightnessUnit } from "../lib/utilities/brightness";
 
 export function MainLayout() {
