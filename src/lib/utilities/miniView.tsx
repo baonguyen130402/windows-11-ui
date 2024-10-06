@@ -6,16 +6,22 @@ import { MzFirefox } from "../../components/apps/mz-firefox";
 import { MzFirefoxContext } from "../contexts/MzFirefoxContext";
 import { FileExplorer } from "../../components/apps/file-explorer";
 import { FileExplorerContext } from "../contexts/FileExplorerContext";
+import { VSCodeContext } from "../contexts/VsCodeContext";
+import { VSCode } from "../../components/apps/vscode";
 
 export function MiniView(props: any) {
   const { appHover } = props;
-  
+
+  const { vsCodeOpening } = useContext(VSCodeContext);
   const { msEdgeOpening } = useContext(MsEdgeContext);
   const { mzFirefoxOpening } = useContext(MzFirefoxContext);
   const { fileExplorerOpening } = useContext(FileExplorerContext);
 
   return (
     <div className="absolute hidden w-[130px] h-[150px] bg-[#1d1d1d] bottom-[55px] rounded-[0.3em] p-[0.5em] group-hover:block group-active:invisible flex-col items-center gap-y-2">
+      {appHover === "vsCode" && (
+        <VSCode isOpen={vsCodeOpening} inMiniview={true} />
+      )}
       {appHover === "msEdge" && (
         <MsEdge isOpen={msEdgeOpening} inMiniview={true} />
       )}
