@@ -26,4 +26,13 @@ export const appsOnDesktop = [
     ),
     title: "Folder",
   },
+  {
+    icon: (
+      <img
+        src="/images/apps/vs-code.ico"
+        className="size-12 justify-self-center"
+      />
+    ),
+    title: "VSCode",
+  },
 ];

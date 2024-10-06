@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
 import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
 import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
+import { VSCodeContext } from "../../lib/contexts/VsCodeContext";
 
 export function DesktopApp(props: any) {
   const {
@@ -15,6 +16,7 @@ export function DesktopApp(props: any) {
     colId = 1,
   } = props;
 
+  const { setVSCodeOpening } = useContext(VSCodeContext);
   const { setMsEdgeOpening } = useContext(MsEdgeContext);
   const { setMzFirefoxOpening } = useContext(MzFirefoxContext);
   const { setFileExplorerOpening } = useContext(FileExplorerContext);
@@ -38,6 +40,10 @@ export function DesktopApp(props: any) {
 
     if (icon === "Folder") {
       setFileExplorerOpening(true);
+    }
+
+    if (icon === "VSCode") {
+      setVSCodeOpening(true);
     }
   }
 
