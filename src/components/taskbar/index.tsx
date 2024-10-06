@@ -14,8 +14,10 @@ import { SystemIconTray } from "./components/systemIconTray";
 import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
 import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
 import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
+import { VSCodeContext } from "../../lib/contexts/VsCodeContext";
 
 export function Taskbar() {
+  const { vsCodeMaximize, vsCodeMinimize } = useContext(VSCodeContext);
   const { msEdgeMaximize, msEdgeMinimize } = useContext(MsEdgeContext);
   const { mzFirefoxMaximize, mzFirefoxMinimize } = useContext(MzFirefoxContext);
   const { fileExplorerMaximize, fileExplorerMinimizie } = useContext(
@@ -23,7 +25,7 @@ export function Taskbar() {
   );
 
   const [state, setState] = useState(false);
-  
+
   const setStateFromChild = (value: boolean) => setState(value);
 
   return (
@@ -32,10 +34,12 @@ export function Taskbar() {
         "grid grid-cols-4 gap-x-2 items-center fixed bottom-0 left-0 right-0 py-0.5 px-2.5 backdrop-blur-2xl bg-[rgba(0,0,0,.45)] w-screen h-12 border-t border-slate-600",
         {
           "hidden": (msEdgeMaximize && msEdgeMinimize === false) ||
+            (vsCodeMaximize && vsCodeMinimize === false) || 
             (mzFirefoxMaximize && mzFirefoxMinimize === false) ||
             (fileExplorerMaximize && fileExplorerMinimizie === false),
-          "block": msEdgeMaximize === false || mzFirefoxMaximize === false ||
+            "block": msEdgeMaximize === false || mzFirefoxMaximize === false ||
             fileExplorerMaximize === false ||
+            (vsCodeMaximize && vsCodeMinimize) ||
             (msEdgeMaximize && msEdgeMinimize) ||
             (mzFirefoxMaximize && mzFirefoxMinimize) ||
             (fileExplorerMaximize && fileExplorerMinimizie),

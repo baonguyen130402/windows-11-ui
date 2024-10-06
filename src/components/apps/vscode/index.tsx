@@ -35,7 +35,7 @@ export function VSCode(props: any) {
                 "block w-[72rem] h-[45rem] bg-gray-900/80":
                   isMinimize === false ||
                   isMaximize === false,
-                "w-[114px] h-[120px] bg-white": inMiniview,
+                "w-[114px] h-[120px]": inMiniview,
               },
             )}
           >

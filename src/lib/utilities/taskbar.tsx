@@ -6,12 +6,17 @@ import { FileExplorerContext } from "../contexts/FileExplorerContext";
 import { VSCodeContext } from "../contexts/VsCodeContext";
 
 export function TriggerAppsFromTaksbar() {
-  const { setVSCodeOpening, setVsCodeMinimize } = useContext(VSCodeContext);
-  const { setMsEdgeOpening, setMsEdgeMinimize } = useContext(MsEdgeContext);
-  const { setMzFirefoxOpening, setMzFirefoxMinimize } = useContext(
-    MzFirefoxContext,
+  const { setVSCodeOpening, setVsCodeMinimize, vsCodeMinimize } = useContext(
+    VSCodeContext,
   );
-  const { setFileExplorerOpening, setFileExplorerMinimize } = useContext(
+  const { setMsEdgeOpening, setMsEdgeMinimize, msEdgeMinimize } = useContext(
+    MsEdgeContext,
+  );
+  const { setMzFirefoxOpening, setMzFirefoxMinimize, mzFirefoxMinimize } =
+    useContext(
+      MzFirefoxContext,
+    );
+  const { setFileExplorerOpening, setFileExplorerMinimize, fileExplorerMinimizie } = useContext(
     FileExplorerContext,
   );
 
@@ -34,6 +39,7 @@ export function TriggerAppsFromTaksbar() {
   }
 
   function openMinimizedApp(app: String) {
+    console.log(app);
     if (app === "msEdge") {
       setMsEdgeMinimize(false);
     }
@@ -47,7 +53,7 @@ export function TriggerAppsFromTaksbar() {
     }
 
     if (app === "vsCode") {
-      setVsCodeMinimize(false);
+      setVsCodeMinimize(!vsCodeMinimize);
     }
   }
 
