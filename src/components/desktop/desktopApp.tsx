@@ -2,10 +2,10 @@ import { useContext } from "react";
 
 import clsx from "clsx";
 
-import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
-import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
 import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
 import { VSCodeContext } from "../../lib/contexts/VsCodeContext";
+import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
+import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
 
 export function DesktopApp(props: any) {
   const {

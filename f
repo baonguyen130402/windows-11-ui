@@ -7,23 +7,21 @@ import {
   ContextMenu,
   ContextMenuTrigger,
 } from "../../lib/components/ui/context-menu";
-
+import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
+import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
+import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
 
 import { DesktopApp } from "./desktopApp";
 
-import { VSCode } from "../apps/vscode";
 import { MsEdge } from "../apps/ms-edge";
 import { MzFirefox } from "../apps/mz-firefox";
 import { ContextContent } from "./contextMenu";
 import { FileExplorer } from "../apps/file-explorer";
 
-import { MsEdgeContext } from "../../lib/contexts/MsEdgeContext";
-import { VSCodeContext } from "../../lib/contexts/VsCodeContext";
-import { MzFirefoxContext } from "../../lib/contexts/MzFirefoxContext";
-import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
-
 import { appsOnDesktop } from "../../lib/data/desktop";
 import { separateDesktopLayout } from "../../lib/helper";
+import { VSCode } from "../apps/vscode";
+import { VSCodeContext } from "../../lib/contexts/VsCodeContext";
 
 export function Desktop() {
   const apps = separateDesktopLayout(appsOnDesktop);
@@ -31,6 +29,7 @@ export function Desktop() {
   const { vsCodeOpening, vsCodeMinimize, vsCodeMaximize } = useContext(
     VSCodeContext,
   );
+
   const { msEdgeOpening, msEdgeMinimize, msEdgeMaximize } = useContext(
     MsEdgeContext,
   );
@@ -75,6 +74,11 @@ export function Desktop() {
             isOpen={fileExplorerOpening}
             isMinimize={fileExplorerMinimizie}
             isMaximize={fileExplorerMaximize}
+          />
+          <MzFirefox
+            isOpen={mzFirefoxOpening}
+            isMinimize={mzFirefoxMinimize}
+            isMaximize={mzFirefoxMaximize}
           />
           <VSCode
             isOpen={vsCodeOpening}
