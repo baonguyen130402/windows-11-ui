@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import { generateKey } from "crypto";
 
 export function getDateTime() {
   const newDate = new Date().toLocaleDateString();
@@ -33,11 +32,6 @@ export function separateDesktopLayout(
   column: number = 18,
 ) {
   const { title, icon } = icons;
-
-  function generateId(a: number) {
-    return (a * Date.now()).toString(36) +
-      Math.random().toString(36);
-  }
 
   const desktopLayout = Array
     .from(Array(row), () =>

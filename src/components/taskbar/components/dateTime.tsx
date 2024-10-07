@@ -7,9 +7,9 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "../../lib/components/ui/card";
-import { Icons } from "../../lib/icons";
-import { getDateTime } from "../../lib/helper";
+} from "../../../lib/components/ui/card";
+import { Icons } from "../../../lib/icons";
+import { getDateTime } from "../../../lib/helper";
 
 export function Modal(props: any) {
   const { isOpen } = props;

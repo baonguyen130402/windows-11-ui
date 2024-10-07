@@ -1,4 +1,7 @@
+import clsx from "clsx";
+
 export function generateAppsPinnedOnTaskbar(
+  vsCodeOpening: boolean = false,
   msEdgeOpening: boolean = false,
   mzFirefoxOpening: boolean = false,
   fileExplorerOpening: boolean = false,
@@ -7,26 +10,45 @@ export function generateAppsPinnedOnTaskbar(
     {
       id: 1,
       isOpening: false,
+      isPinned: true,
       icon: <img src="/images/apps/copilot.png" />,
       title: "copilot",
     },
     {
       id: 2,
       isOpening: mzFirefoxOpening,
+      isPinned: !mzFirefoxOpening,
       icon: <img src="/images/apps/firefox.png" />,
       title: "firefox",
     },
     {
       id: 3,
       isOpening: msEdgeOpening,
+      isPinned: !msEdgeOpening,
       icon: <img src="/images/apps/edge.png" />,
       title: "msEdge",
     },
     {
       id: 4,
       isOpening: fileExplorerOpening,
+      isPinned: !fileExplorerOpening,
       icon: <img src="/images/apps/folder.png" />,
       title: "folder",
+    },
+    {
+      id: 5,
+      isOpening: vsCodeOpening,
+      isPinned: vsCodeOpening,
+      icon: (
+        <img
+          src="/images/apps/vs-code.ico"
+          className={clsx("size-6", {
+            "hidden invisible": !vsCodeOpening,
+            "block": vsCodeOpening,
+          })}
+        />
+      ),
+      title: "vsCode",
     },
   ];
 }
