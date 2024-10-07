@@ -28,11 +28,7 @@ export function FileExplorer(props: any) {
         <article
           ref={explorerRef}
           className={clsx(
-<<<<<<< HEAD
-            "backdrop-filter backdrop-blur-lg rounded-[0.5rem] overflow-hidden border border-[#2c3246]",
-=======
             "backdrop-filter backdrop-blur-lg rounded-[0.5em] overflow-hidden absolute border border-[#2c3246]",
->>>>>>> main
             {
               "hidden": isMinimize,
               "w-screen h-screen rounded-none": isMaximize,

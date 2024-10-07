@@ -2,7 +2,6 @@ import {
   ContextMenuCheckboxItem,
   ContextMenuContent,
   ContextMenuItem,
-  ContextMenuLabel,
   ContextMenuRadioGroup,
   ContextMenuRadioItem,
   ContextMenuSeparator,
@@ -12,7 +11,6 @@ import {
   ContextMenuSubTrigger,
 } from "../../lib/components/ui/context-menu";
 import { Icons } from "../../lib/icons";
-import { DesktopApp } from "./icon";
 
 export function ContextContent() {
   return (

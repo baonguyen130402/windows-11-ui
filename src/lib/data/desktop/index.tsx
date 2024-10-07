@@ -6,11 +6,7 @@ export const appsOnDesktop = [
         className="size-12 justify-self-center"
       />
     ),
-<<<<<<< HEAD
-    title: "firefox",
-=======
     title: "Firefox",
->>>>>>> main
   },
   {
     icon: (
@@ -19,11 +15,7 @@ export const appsOnDesktop = [
         className="size-12 justify-self-center"
       />
     ),
-<<<<<<< HEAD
-    title: "msEdge",
-=======
     title: "Edge",
->>>>>>> main
   },
   {
     icon: (
@@ -32,9 +24,6 @@ export const appsOnDesktop = [
         className="size-12 justify-self-center"
       />
     ),
-<<<<<<< HEAD
-    title: "folder",
-=======
     title: "Folder",
   },
   {
@@ -45,6 +34,5 @@ export const appsOnDesktop = [
       />
     ),
     title: "VSCode",
->>>>>>> main
   },
 ];

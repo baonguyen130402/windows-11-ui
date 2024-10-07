@@ -3,13 +3,10 @@ import { useContext, useState } from "react";
 import clsx from "clsx";
 
 import { AppsPin } from "./components/appsPin";
-import { HomeBtn } from "./components/homeBtn";
 import { Weather } from "./components/weather";
+import { HomeBtn } from "./components/homeBtn";
 import { DateTime } from "./components/dateTime";
-<<<<<<< HEAD
-=======
 import { StartMenu } from "./components/startMenu";
->>>>>>> main
 import { SearchBtn } from "./components/searchBtn";
 import { ControlCenter } from "./components/controlCenter";
 import { SystemIconTray } from "./components/systemIconTray";
@@ -36,21 +33,13 @@ export function Taskbar() {
       className={clsx(
         "grid grid-cols-4 gap-x-2 items-center fixed bottom-0 left-0 right-0 py-0.5 px-2.5 backdrop-blur-2xl bg-[rgba(0,0,0,.45)] w-screen h-12 border-t border-slate-600",
         {
-<<<<<<< HEAD
-          "hidden": (msEdgeMaximize && !msEdgeMinimize) ||
-            (mzFirefoxMaximize && !mzFirefoxMinimize) ||
-            (fileExplorerMaximize && !fileExplorerMinimizie),
-          "block": !msEdgeMaximize || !mzFirefoxMaximize ||
-            !fileExplorerMaximize ||
-=======
           "hidden": (msEdgeMaximize && msEdgeMinimize === false) ||
-            (vsCodeMaximize && vsCodeMinimize === false) || 
+            (vsCodeMaximize && vsCodeMinimize === false) ||
             (mzFirefoxMaximize && mzFirefoxMinimize === false) ||
             (fileExplorerMaximize && fileExplorerMinimizie === false),
-            "block": msEdgeMaximize === false || mzFirefoxMaximize === false ||
+          "block": msEdgeMaximize === false || mzFirefoxMaximize === false ||
             fileExplorerMaximize === false ||
             (vsCodeMaximize && vsCodeMinimize) ||
->>>>>>> main
             (msEdgeMaximize && msEdgeMinimize) ||
             (mzFirefoxMaximize && mzFirefoxMinimize) ||
             (fileExplorerMaximize && fileExplorerMinimizie),
