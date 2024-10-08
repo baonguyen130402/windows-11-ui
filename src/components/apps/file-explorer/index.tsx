@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import clsx from "clsx";
 import Draggable from "react-draggable";
@@ -8,23 +8,22 @@ import { Navbar } from "./components/navbar";
 import { Container } from "./components/container";
 import { RenderIf } from "../../../lib/utilities/renderIf";
 
+import { usePosition } from "../../../lib/customHooks";
+
 export function FileExplorer(props: any) {
   const { isOpen, isMinimize, isMaximize, inMiniview = false } = props;
 
   const explorerRef = useRef(null);
-
-  const screenWidth = window.innerWidth;
-  const screenHeight = window.innerHeight;
-  const bounds = {
-    left: 0,
-    top: 0,
-    right: screenWidth - 1128,
-    bottom: screenHeight - 624,
-  };
+  const [postion, setPosition] = usePosition();
 
   return (
     <RenderIf isTrue={isOpen}>
-      <Draggable handle=".title-bar" nodeRef={explorerRef} bounds={bounds}>
+      <Draggable
+        handle=".title-bar"
+        defaultPosition={{ x: postion.x, y: postion.y }}
+        onStop={setPosition}
+        nodeRef={explorerRef}
+      >
         <article
           ref={explorerRef}
           className={clsx(
