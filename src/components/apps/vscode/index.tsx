@@ -7,6 +7,8 @@ import { Content } from "./components/content";
 import { RenderIf } from "../../../lib/utilities/renderIf";
 import { Header } from "./components/header";
 
+import { usePosition } from "../../../lib/customHooks";
+
 export function VSCode(props: any) {
   const { isOpen, isMinimize, isMaximize, inMiniview = false } = props;
 
@@ -21,10 +23,18 @@ export function VSCode(props: any) {
     bottom: screenHeight - 624,
   };
 
+  const [position, setPosition] = usePosition("VSCode");
+
   return (
     <>
       <RenderIf isTrue={isOpen}>
-        <Draggable handle=".title-bar" nodeRef={explorerRef} bounds={bounds}>
+        <Draggable
+          handle=".title-bar"
+          nodeRef={explorerRef}
+          bounds={bounds}
+          defaultPosition={{ x: position.x, y: position.y }}
+          onStop={setPosition}
+        >
           <article
             ref={explorerRef}
             className={clsx(
