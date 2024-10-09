@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 import clsx from "clsx";
 import Draggable from "react-draggable";
@@ -14,13 +14,14 @@ export function FileExplorer(props: any) {
   const { isOpen, isMinimize, isMaximize, inMiniview = false } = props;
 
   const explorerRef = useRef(null);
-  const [postion, setPosition] = usePosition();
+  const [postion, setPosition] = usePosition("Folder");
 
   return (
     <RenderIf isTrue={isOpen}>
       <Draggable
         handle=".title-bar"
         defaultPosition={{ x: postion.x, y: postion.y }}
+        onStart={setPosition}
         onStop={setPosition}
         nodeRef={explorerRef}
       >
