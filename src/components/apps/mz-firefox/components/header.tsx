@@ -8,11 +8,12 @@ export function Header() {
   );
 
   return (
-    <div className="title-bar">
-      <div className="w-full h-10 flex justify-between items-center px-2 bg-neutral-900">
-        <div className="w-1/5 flex items-center gap-2 ml-8">
-          <Tab />
-          <Icons.plus className="size-3 fill-white" />
+      <div className="w-full h-10 flex items-center px-2 bg-neutral-900">
+        <div className="title-bar w-[calc(100%-100px)]">
+          <div className="w-1/5 flex items-center gap-2 ml-8">
+            <Tab />
+            <Icons.plus className="size-3 fill-white" />
+          </div>
         </div>
         <div className="flex items-center justify-around w-[100px]">
           <div
@@ -35,6 +36,5 @@ export function Header() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
