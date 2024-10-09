@@ -14,16 +14,26 @@ export function FileExplorer(props: any) {
   const { isOpen, isMinimize, isMaximize, inMiniview = false } = props;
 
   const explorerRef = useRef(null);
+
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+  const bounds = {
+    left: 0,
+    top: 0,
+    right: screenWidth - 1128,
+    bottom: screenHeight - 624,
+  };
+
   const [postion, setPosition] = usePosition("Folder");
 
   return (
     <RenderIf isTrue={isOpen}>
       <Draggable
         handle=".title-bar"
-        defaultPosition={{ x: postion.x, y: postion.y }}
-        onStart={setPosition}
-        onStop={setPosition}
         nodeRef={explorerRef}
+        bounds={bounds}
+        defaultPosition={{ x: postion.x, y: postion.y }}
+        onStop={setPosition}
       >
         <article
           ref={explorerRef}
