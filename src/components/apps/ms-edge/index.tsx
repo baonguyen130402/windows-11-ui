@@ -7,6 +7,7 @@ import { Header } from "./components/header";
 import { Navbar } from "./components/navbar";
 import { Bookmark } from "./components/bookmark";
 import { RenderIf } from "../../../lib/utilities/renderIf";
+import { usePosition } from "../../../lib/customHooks";
 
 export function MsEdge(props: any) {
   const { isOpen, isMinimize, isMaximize, inMiniview = false } = props;
@@ -23,9 +24,17 @@ export function MsEdge(props: any) {
     bottom: screenHeight - 624,
   };
 
+  const [position, setPosition] = usePosition("MsEdge");
+
   return (
     <RenderIf isTrue={isOpen}>
-      <Draggable handle=".title-bar" nodeRef={explorerRef} bounds={bounds}>
+      <Draggable
+        handle=".title-bar"
+        nodeRef={explorerRef}
+        bounds={bounds}
+        defaultPosition={{ x: position.x, y: position.y }}
+        onStop={setPosition}
+      >
         <article
           ref={explorerRef}
           className={clsx(
