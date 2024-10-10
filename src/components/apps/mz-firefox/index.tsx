@@ -32,7 +32,9 @@ export function MzFirefox(props: any) {
         handle=".title-bar"
         nodeRef={explorerRef}
         bounds={bounds}
-        defaultPosition={{ x: position.x, y: position.y }}
+        defaultPosition={inMiniview
+          ? { x: 0, y: 0 }
+          : { x: position.x, y: position.y }}
         onStop={setPosition}
       >
         <article

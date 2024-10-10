@@ -24,7 +24,7 @@ export function FileExplorer(props: any) {
     bottom: screenHeight - 624,
   };
 
-  const [postion, setPosition] = usePosition("Folder");
+  const [position, setPosition] = usePosition("Folder");
 
   return (
     <RenderIf isTrue={isOpen}>
@@ -32,7 +32,9 @@ export function FileExplorer(props: any) {
         handle=".title-bar"
         nodeRef={explorerRef}
         bounds={bounds}
-        defaultPosition={{ x: postion.x, y: postion.y }}
+        defaultPosition={inMiniview
+          ? { x: 0, y: 0 }
+          : { x: position.x, y: position.y }}
         onStop={setPosition}
       >
         <article
