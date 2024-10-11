@@ -6,17 +6,40 @@ import { FileExplorerContext } from "../contexts/FileExplorerContext";
 import { VSCodeContext } from "../contexts/VsCodeContext";
 
 export function TriggerAppsFromTaksbar() {
-  const { setVSCodeOpening, setVsCodeMinimize, vsCodeMinimize } = useContext(
+  const {
+    setVSCodeOpening,
+    setVsCodeMinimize,
+    setVSCodePinOnTaskbar,
+    vsCodePinOnTaskbar,
+    vsCodeMinimize,
+  } = useContext(
     VSCodeContext,
   );
-  const { setMsEdgeOpening, setMsEdgeMinimize, msEdgeMinimize } = useContext(
+  const {
+    setMsEdgeOpening,
+    setMsEdgeMinimize,
+    setMsEdgePinOnTaskbar,
+    msEdgePinOnTaskbar,
+    msEdgeMinimize,
+  } = useContext(
     MsEdgeContext,
   );
-  const { setMzFirefoxOpening, setMzFirefoxMinimize, mzFirefoxMinimize } =
-    useContext(
-      MzFirefoxContext,
-    );
-  const { setFileExplorerOpening, setFileExplorerMinimize, fileExplorerMinimizie } = useContext(
+  const {
+    setMzFirefoxOpening,
+    setMzFirefoxMinimize,
+    setMzFirefoxPinOnTaskbar,
+    mzFirefoxPinOnTaskbar,
+    mzFirefoxMinimize,
+  } = useContext(
+    MzFirefoxContext,
+  );
+  const {
+    setFileExplorerOpening,
+    setFileExplorerMinimize,
+    setFileExplorerPinOnTaskbar,
+    fileExplorerPinOnTaskbar,
+    fileExplorerMinimizie,
+  } = useContext(
     FileExplorerContext,
   );
 
@@ -39,17 +62,16 @@ export function TriggerAppsFromTaksbar() {
   }
 
   function openMinimizedApp(app: String) {
-    console.log(app);
     if (app === "msEdge") {
-      setMsEdgeMinimize(false);
+      setMsEdgeMinimize(!msEdgeMinimize);
     }
 
     if (app === "firefox") {
-      setMzFirefoxMinimize(false);
+      setMzFirefoxMinimize(!mzFirefoxMinimize);
     }
 
     if (app === "folder") {
-      setFileExplorerMinimize(false);
+      setFileExplorerMinimize(!fileExplorerMinimizie);
     }
 
     if (app === "vsCode") {
@@ -57,5 +79,22 @@ export function TriggerAppsFromTaksbar() {
     }
   }
 
-  return { openNewApp, openMinimizedApp };
+  function unpinAndPinApp(app: String) {
+    if (app === "msEdge") {
+      setMsEdgePinOnTaskbar(!msEdgePinOnTaskbar);
+    }
+
+    if (app === "firefox") {
+      setMzFirefoxPinOnTaskbar(!mzFirefoxPinOnTaskbar);
+    }
+
+    if (app === "folder") {
+      setFileExplorerPinOnTaskbar(!fileExplorerPinOnTaskbar);
+    }
+    if (app === "vsCode") {
+      setVSCodePinOnTaskbar(!vsCodePinOnTaskbar);
+    }
+  }
+
+  return { openNewApp, openMinimizedApp, unpinAndPinApp };
 }
