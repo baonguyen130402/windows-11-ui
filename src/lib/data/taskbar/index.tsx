@@ -1,44 +1,36 @@
-export function generateAppsPinnedOnTaskbar(
-  vsCodeOpening: boolean = false,
-  msEdgeOpening: boolean = false,
-  mzFirefoxOpening: boolean = false,
-  fileExplorerOpening: boolean = false,
-) {
+export function generateAppsOnTaskbar(props: any) {
+  const { vsCode, msEdge, mzFirefox, fileExplorer } = props;
+
   return [
     {
-      id: 1,
-      isOpening: false,
-      isPinned: true,
-      icon: <img src="/images/apps/copilot.png" />,
       title: "copilot",
+      isOpen: false,
+      isPinOn: true,
+      icon: <img src="/images/apps/copilot.png" />,
     },
     {
-      id: 2,
-      isOpening: mzFirefoxOpening,
-      isPinned: true,
-      icon: <img src="/images/apps/firefox.png" />,
       title: "firefox",
+      isOpen: mzFirefox.isOpening,
+      isPinOn: mzFirefox.isPinOn,
+      icon: <img src="/images/apps/firefox.png" />,
     },
     {
-      id: 3,
-      isOpening: msEdgeOpening,
-      isPinned: true,
-      icon: <img src="/images/apps/edge.png" />,
       title: "msEdge",
+      isOpen: msEdge.isOpening,
+      isPinOn: msEdge.isPinOn,
+      icon: <img src="/images/apps/edge.png" />,
     },
     {
-      id: 4,
-      isOpening: fileExplorerOpening,
-      isPinned: true,
-      icon: <img src="/images/apps/folder.png" />,
       title: "folder",
+      isOpen: fileExplorer.isOpening,
+      isPinOn: fileExplorer.isPinOn,
+      icon: <img src="/images/apps/folder.png" />,
     },
     {
-      id: 5,
-      isOpening: vsCodeOpening,
-      isPinned: vsCodeOpening,
-      icon: <img src="/images/apps/vs-code.ico" className="size-6" />,
       title: "vsCode",
+      isOpen: vsCode.isOpening,
+      isPinOn: vsCode.isPinOn,
+      icon: <img src="/images/apps/vs-code.ico" className="size-6" />,
     },
   ];
 }
