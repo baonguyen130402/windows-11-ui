@@ -7,6 +7,8 @@ interface Props {
   setVsCodeMinimize: (isMinimize: boolean) => void;
   vsCodeMaximize: boolean;
   setVsCodeMaximize: (isMaximize: boolean) => void;
+  vsCodePinOnTaskbar: boolean;
+  setVSCodePinOnTaskbar: (isPinOn: boolean) => void;
 }
 
 export const VSCodeContext = createContext<Props>({
@@ -16,12 +18,16 @@ export const VSCodeContext = createContext<Props>({
   setVsCodeMinimize: () => { },
   vsCodeMaximize: false,
   setVsCodeMaximize: () => { },
+  vsCodePinOnTaskbar: false,
+  setVSCodePinOnTaskbar: () => { },
 });
 
-export default function VSCodeProvider({ children }) {
+export default function VSCodeProvider({ children }: { children: any }) {
   const [isOpening, setIsOpen] = useState(false);
   const [isMinimize, setIsMinimize] = useState(false);
   const [isMaximize, setIsMaximize] = useState(false);
+
+  const [isPinOn, setIsPinOn] = useState(false);
 
   return (
     <VSCodeContext.Provider
@@ -37,6 +43,10 @@ export default function VSCodeProvider({ children }) {
         vsCodeMaximize: isMaximize,
         setVsCodeMaximize: (value) => {
           setIsMaximize(value);
+        },
+        vsCodePinOnTaskbar: isPinOn,
+        setVSCodePinOnTaskbar: (value) => {
+          setIsPinOn(value);
         },
       }}
     >

@@ -7,6 +7,8 @@ interface Props {
   setMzFirefoxMinimize: (isMinimize: boolean) => void;
   mzFirefoxMaximize: boolean;
   setMzFirefoxMaximize: (isMaximize: boolean) => void;
+  mzFirefoxPinOnTaskbar: boolean;
+  setMzFirefoxPinOnTaskbar: (isMaximize: boolean) => void;
 }
 
 export const MzFirefoxContext = createContext<Props>({
@@ -16,12 +18,16 @@ export const MzFirefoxContext = createContext<Props>({
   setMzFirefoxMinimize: () => { },
   mzFirefoxMaximize: false,
   setMzFirefoxMaximize: () => { },
+  mzFirefoxPinOnTaskbar: true,
+  setMzFirefoxPinOnTaskbar: () => { },
 });
 
-export default function MzFirefoxProvider({ children }) {
+export default function MzFirefoxProvider({ children }: { children: any }) {
   const [isOpening, setIsOpen] = useState(false);
   const [isMinimize, setIsMinimize] = useState(false);
   const [isMaximize, setIsMaximize] = useState(false);
+
+  const [isPinOn, setIsPinOn] = useState(true);
 
   return (
     <MzFirefoxContext.Provider
@@ -37,6 +43,10 @@ export default function MzFirefoxProvider({ children }) {
         mzFirefoxMaximize: isMaximize,
         setMzFirefoxMaximize: (value) => {
           setIsMaximize(value);
+        },
+        mzFirefoxPinOnTaskbar: isPinOn,
+        setMzFirefoxPinOnTaskbar: (value) => {
+          setIsPinOn(value);
         },
       }}
     >

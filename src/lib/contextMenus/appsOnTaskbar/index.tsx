@@ -1,20 +1,23 @@
-import { ContextMenu, ContextMenuTrigger } from "@radix-ui/react-context-menu";
 import {
+  ContextMenu,
   ContextMenuContent,
   ContextMenuItem,
   ContextMenuSeparator,
+  ContextMenuTrigger,
 } from "../../../lib/components/ui/context-menu";
 import { Icons } from "../../../lib/icons";
-import { useContext } from "react";
-import { VSCodeContext } from "../../contexts/VsCodeContext";
+
 import { RenderIf } from "../../utilities/renderIf";
+import { TriggerAppsFromTaksbar } from "../../utilities/taskbar";
 
 export function AppOnTaskbarContextMenu(
-  { children, isPinOn }: { children: any; isPinOn: boolean },
+  { children, appName, isPinOn }: {
+    children: any;
+    appName: string;
+    isPinOn: boolean;
+  },
 ) {
-  const { vsCodeIsPinOnTaskbar, setVSCodeIsPinOnTaskbar } = useContext(
-    VSCodeContext,
-  );
+  const { unpinAndPinApp } = TriggerAppsFromTaksbar();
 
   return (
     <ContextMenu>
@@ -34,7 +37,7 @@ export function AppOnTaskbarContextMenu(
         <RenderIf isTrue={isPinOn}>
           <ContextMenuItem
             className="flex items-center gap-4"
-            onClick={() => setVSCodeIsPinOnTaskbar(false)}
+            onClick={() => unpinAndPinApp(appName)}
           >
             <img src="/images/options/unpin.png" className="size-5" />
             <span>Unpin from taskbar</span>
@@ -43,7 +46,7 @@ export function AppOnTaskbarContextMenu(
         <RenderIf isTrue={!isPinOn}>
           <ContextMenuItem
             className="flex items-center gap-4"
-            onClick={() => setVSCodeIsPinOnTaskbar(true)}
+            onClick={() => unpinAndPinApp(appName)}
           >
             <img src="/images/options/pin.png" className="size-5" />
             <span>Pin on taskbar</span>

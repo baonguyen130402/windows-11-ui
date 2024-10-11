@@ -7,6 +7,8 @@ interface Props {
   setMsEdgeMinimize: (isMinimize: boolean) => void;
   msEdgeMaximize: boolean;
   setMsEdgeMaximize: (isMaximize: boolean) => void;
+  msEdgePinOnTaskbar: boolean;
+  setMsEdgePinOnTaskbar: (isMaximize: boolean) => void;
 }
 
 export const MsEdgeContext = createContext<Props>({
@@ -16,12 +18,16 @@ export const MsEdgeContext = createContext<Props>({
   setMsEdgeMinimize: () => { },
   msEdgeMaximize: false,
   setMsEdgeMaximize: () => { },
+  msEdgePinOnTaskbar: true,
+  setMsEdgePinOnTaskbar: () => { },
 });
 
-export default function MsEdgeProvider({ children }) {
+export default function MsEdgeProvider({ children }: { children: any }) {
   const [isOpening, setIsOpen] = useState(false);
   const [isMinimize, setIsMinimize] = useState(false);
   const [isMaximize, setIsMaximize] = useState(false);
+
+  const [isPinOn, setIsPinOn] = useState(true);
 
   return (
     <MsEdgeContext.Provider
@@ -37,6 +43,10 @@ export default function MsEdgeProvider({ children }) {
         msEdgeMaximize: isMaximize,
         setMsEdgeMaximize(value) {
           setIsMaximize(value);
+        },
+        msEdgePinOnTaskbar: isPinOn,
+        setMsEdgePinOnTaskbar(value) {
+          setIsPinOn(value);
         },
       }}
     >
