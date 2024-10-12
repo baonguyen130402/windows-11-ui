@@ -6,8 +6,10 @@ import Draggable from "react-draggable";
 import { Header } from "./components/header";
 import { Navbar } from "./components/navbar";
 import { Bookmark } from "./components/bookmark";
+
 import { RenderIf } from "../../../lib/utilities/renderIf";
-import { usePosition } from "../../../lib/customHooks";
+
+import { usePosition } from "../../../lib/hooks/usePosion";
 
 export function MzFirefox(props: any) {
   const { isOpen, isMinimize, isMaximize, inMiniview = false } = props;

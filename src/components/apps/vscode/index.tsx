@@ -3,11 +3,11 @@ import { useRef } from "react";
 import clsx from "clsx";
 import Draggable from "react-draggable";
 
+import { Header } from "./components/header";
 import { Content } from "./components/content";
 import { RenderIf } from "../../../lib/utilities/renderIf";
-import { Header } from "./components/header";
 
-import { usePosition } from "../../../lib/customHooks";
+import { usePosition } from "../../../lib/hooks/usePosion";
 
 export function VSCode(props: any) {
   const { isOpen, isMinimize, isMaximize, inMiniview = false } = props;
