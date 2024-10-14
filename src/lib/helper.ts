@@ -47,6 +47,14 @@ export function separateDesktopLayout(
   return desktopLayout;
 }
 
+export function getStateFromLocalStorage(app: string) {
+  try {
+    return JSON.parse(localStorage.getItem(`${app}`) || "");
+  } catch (e) {
+    return "";
+  }
+}
+
 export async function getWeather() {
   const HCMC = {
     latitude: 10.82,
