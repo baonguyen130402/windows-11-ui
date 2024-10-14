@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { getStateFromLocalStorage } from "../helper";
 
 interface Props {
   msEdgeOpening: boolean;
@@ -23,11 +24,32 @@ export const MsEdgeContext = createContext<Props>({
 });
 
 export default function MsEdgeProvider({ children }: { children: any }) {
-  const [isOpening, setIsOpen] = useState(false);
-  const [isMinimize, setIsMinimize] = useState(false);
-  const [isMaximize, setIsMaximize] = useState(false);
+  const msEdge = getStateFromLocalStorage("msEdge");
 
-  const [isPinOn, setIsPinOn] = useState(true);
+  const [isOpening, setIsOpen] = useState(
+    msEdge.isOpening !== undefined ? msEdge.isOpening : false,
+  );
+  const [isMinimize, setIsMinimize] = useState(
+    msEdge.isMinimize !== undefined ? msEdge.isMinimize : false,
+  );
+  const [isMaximize, setIsMaximize] = useState(
+    msEdge.isMaximize !== undefined ? msEdge.isMaximize : false,
+  );
+  const [isPinOn, setIsPinOn] = useState(
+    msEdge.isPinOn !== undefined ? msEdge.isPinOn : true,
+  );
+
+  useEffect(() => {
+    localStorage.setItem(
+      "msEdge",
+      JSON.stringify({
+        isOpening: isOpening,
+        isMaximize: isMaximize,
+        isMinimize: isMinimize,
+        isPinOn: isPinOn,
+      }),
+    );
+  }, [isOpening, isMinimize, isMaximize, isPinOn]);
 
   return (
     <MsEdgeContext.Provider

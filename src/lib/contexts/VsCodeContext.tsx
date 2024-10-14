@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { getStateFromLocalStorage } from "../helper";
 
 interface Props {
   vsCodeOpening: boolean;
@@ -23,11 +24,32 @@ export const VSCodeContext = createContext<Props>({
 });
 
 export default function VSCodeProvider({ children }: { children: any }) {
-  const [isOpening, setIsOpen] = useState(false);
-  const [isMinimize, setIsMinimize] = useState(false);
-  const [isMaximize, setIsMaximize] = useState(false);
+  const vsCode = getStateFromLocalStorage("vsCode");
 
-  const [isPinOn, setIsPinOn] = useState(false);
+  const [isOpening, setIsOpen] = useState(
+    vsCode.isOpening !== undefined ? vsCode.isOpening : false,
+  );
+  const [isMinimize, setIsMinimize] = useState(
+    vsCode.isMinimize !== undefined ? vsCode.isMinimize : false,
+  );
+  const [isMaximize, setIsMaximize] = useState(
+    vsCode.isMaximize !== undefined ? vsCode.isMaximize : false,
+  );
+  const [isPinOn, setIsPinOn] = useState(
+    vsCode.isPinOn !== undefined ? vsCode.isPinOn : false,
+  );
+
+  useEffect(() => {
+    localStorage.setItem(
+      "vsCode",
+      JSON.stringify({
+        isOpening: isOpening,
+        isMaximize: isMaximize,
+        isMinimize: isMinimize,
+        isPinOn: isPinOn,
+      }),
+    );
+  }, [isOpening, isMinimize, isMaximize, isPinOn]);
 
   return (
     <VSCodeContext.Provider

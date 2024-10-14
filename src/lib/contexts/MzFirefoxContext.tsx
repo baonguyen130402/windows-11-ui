@@ -1,4 +1,6 @@
-import { createContext, useState } from "react";
+import { parse } from "path";
+import { createContext, useEffect, useState } from "react";
+import { getStateFromLocalStorage } from "../helper";
 
 interface Props {
   mzFirefoxOpening: boolean;
@@ -23,11 +25,27 @@ export const MzFirefoxContext = createContext<Props>({
 });
 
 export default function MzFirefoxProvider({ children }: { children: any }) {
-  const [isOpening, setIsOpen] = useState(false);
+  const mzFirefox = getStateFromLocalStorage("mzFirefox");
+
+  const [isOpening, setIsOpen] = useState(
+    mzFirefox.isOpening !== undefined ? mzFirefox.isOpening : false,
+  );
   const [isMinimize, setIsMinimize] = useState(false);
   const [isMaximize, setIsMaximize] = useState(false);
 
   const [isPinOn, setIsPinOn] = useState(true);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "mzFirefox",
+      JSON.stringify({
+        isOpening: isOpening,
+        isMaximize: isMaximize,
+        isMinimize: isMinimize,
+        isPinOn: isPinOn,
+      }),
+    );
+  }, [isOpening, isMinimize, isMaximize, isPinOn]);
 
   return (
     <MzFirefoxContext.Provider

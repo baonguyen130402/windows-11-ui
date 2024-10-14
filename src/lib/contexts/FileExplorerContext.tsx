@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { getStateFromLocalStorage } from "../helper";
 
 interface Props {
   fileExplorerOpening: boolean;
@@ -23,11 +24,32 @@ export const FileExplorerContext = createContext<Props>({
 });
 
 export default function FileExplorerProvider({ children }: { children: any }) {
-  const [isOpening, setIsOpen] = useState(false);
-  const [isMinimize, setIsMinimize] = useState(false);
-  const [isMaximize, setIsMaximize] = useState(false);
+  const fileExplorer = getStateFromLocalStorage("fileExplorer");
 
-  const [isPinOn, setIsPinOn] = useState(true);
+  const [isOpening, setIsOpen] = useState(
+    fileExplorer.isOpening !== undefined ? fileExplorer.isOpening : false,
+  );
+  const [isMinimize, setIsMinimize] = useState(
+    fileExplorer.isMinimize !== undefined ? fileExplorer.isMinimize : false,
+  );
+  const [isMaximize, setIsMaximize] = useState(
+    fileExplorer.isMaximize !== undefined ? fileExplorer.isMaximize : false,
+  );
+  const [isPinOn, setIsPinOn] = useState(
+    fileExplorer.isPinOn !== undefined ? fileExplorer.isPinOn : true,
+  );
+
+  useEffect(() => {
+    localStorage.setItem(
+      "fileExplorer",
+      JSON.stringify({
+        isOpening: isOpening,
+        isMaximize: isMaximize,
+        isMinimize: isMinimize,
+        isPinOn: isPinOn,
+      }),
+    );
+  }, [isOpening, isMinimize, isMaximize, isPinOn]);
 
   return (
     <FileExplorerContext.Provider
