@@ -55,13 +55,13 @@ export function AppsPin() {
     { plugins: [animations()] },
   );
 
-  const { openNewApp, openMinimizedApp } = TriggerAppsFromTaksbar();
-
   useEffect(() => {
     setApps(
       generateAppsOnTaskbar(appsState),
     );
   }, [JSON.stringify(appsState)]);
+
+  const { openNewApp, openMinimizedApp } = TriggerAppsFromTaksbar();
 
   return (
     <ul className="flex items-center gap-x-1" ref={parent}>
