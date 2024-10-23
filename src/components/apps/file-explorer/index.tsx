@@ -34,8 +34,9 @@ export function FileExplorer(props: any) {
         nodeRef={explorerRef}
         bounds={bounds}
         defaultPosition={inMiniview
-          ? { x: 0, y: 0 }
+          ? { x: 50, y: 50 }
           : { x: position.x, y: position.y }}
+        onDrag={setPosition}
         onStop={setPosition}
       >
         <article
@@ -47,6 +48,7 @@ export function FileExplorer(props: any) {
               "w-screen h-screen rounded-none": isMaximize,
               "block w-[1000px] h-[600px]": isMinimize === false ||
                 isMaximize === false,
+              "block w-[calc(50%)] h-screen": position.x === 0,
               "w-[114px] h-[120px] bg-white": inMiniview,
             },
           )}

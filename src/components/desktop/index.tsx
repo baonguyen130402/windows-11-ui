@@ -18,6 +18,7 @@ import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
 import { appsOnDesktop } from "../../lib/data/desktop";
 import { separateDesktopLayout } from "../../lib/helper";
 import { DesktopContextMenu } from "../../lib/contextMenus/desktop";
+import useWindowDimensions from "../../lib/hooks/useWindowDimension";
 
 export function Desktop() {
   const apps = separateDesktopLayout(appsOnDesktop);
