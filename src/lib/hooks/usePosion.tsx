@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 export function usePosition(app: string) {
   const [latestPosition, setLatestPosition] = useState({
-    x: 0,
-    y: 0,
+    x: 50,
+    y: 50,
   });
 
   const getPositionFromLocalStorage = () => {

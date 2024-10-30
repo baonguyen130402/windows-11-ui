@@ -18,7 +18,6 @@ import { FileExplorerContext } from "../../lib/contexts/FileExplorerContext";
 import { appsOnDesktop } from "../../lib/data/desktop";
 import { separateDesktopLayout } from "../../lib/helper";
 import { DesktopContextMenu } from "../../lib/contextMenus/desktop";
-import useWindowDimensions from "../../lib/hooks/useWindowDimension";
 
 export function Desktop() {
   const apps = separateDesktopLayout(appsOnDesktop);
@@ -45,7 +44,7 @@ export function Desktop() {
 
   return (
     <DesktopContextMenu>
-      <div className="w-full h-full absolute">
+      <div className="w-full h-full relative">
         <ul
           className="w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5 absolute"
           ref={parent}

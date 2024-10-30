@@ -28,6 +28,16 @@ export function MsEdge(props: any) {
 
   const [position, setPosition] = usePosition("MsEdge");
 
+  let currentSide;
+
+  if (position.x <= 5 && position.y <= 5) {
+    currentSide = "topleft";
+  } else if (position.x <= 20 && position.y > 10) {
+    currentSide = "left";
+  } else if (position.y <= 20 && position.x > 10) {
+    currentSide = "top";
+  }
+
   return (
     <RenderIf isTrue={isOpen}>
       <Draggable
@@ -49,6 +59,12 @@ export function MsEdge(props: any) {
               "block w-[72rem] h-[45rem]": isMinimize === false ||
                 isMaximize === false,
               "w-[114px] h-[120px] bg-white": inMiniview,
+              "block w-[calc(50%)] h-[calc(100%-3rem)] rounded-none":
+                currentSide === "left",
+              "block h-[calc(100%-3rem)] w-screen rounded-none top-0 let-0 right-0 bottom-0":
+                currentSide === "top",
+              "block h-[calc(50%)] w-[calc(50%)]":
+                position.y <= 10 && position.x <= 10,
             },
           )}
         >
