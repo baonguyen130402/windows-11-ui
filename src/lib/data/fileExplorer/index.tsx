@@ -1,6 +1,3 @@
-import { title } from "process";
-import { Icons } from "../../icons";
-
 export const defaultAppsInSideBar = [
   {
     title: "Desktop",

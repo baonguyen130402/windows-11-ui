@@ -1,4 +1,3 @@
-import { parse } from "path";
 import { createContext, useEffect, useState } from "react";
 import { getStateFromLocalStorage } from "../helper";
 
