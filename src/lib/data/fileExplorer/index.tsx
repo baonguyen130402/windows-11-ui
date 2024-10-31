@@ -45,10 +45,10 @@ export const defaultAppsInSideBar = [
     ),
   },
 
-  {
-    title: "Downloads",
-    icon: <img src="/images/apps/folder.png" className="h-5 w-5 mr-2" />,
-  },
+  //{
+  //  title: "Downloads",
+  //  icon: <img src="/images/apps/folder.png" className="h-5 w-5 mr-2" />,
+  //},
 ];
 
 export const optionsWithFileInToolbar = [
