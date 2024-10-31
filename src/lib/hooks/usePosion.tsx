@@ -1,18 +1,23 @@
 import { useEffect, useState } from "react";
 
 export function usePosition(app: string) {
-  const [latestPosition, setLatestPosition] = useState({
-    x: 50,
-    y: 50,
-  });
+  //const [latestPosition, setLatestPosition] = useState({
+  //  x: 50,
+  //  y: 50,
+  //});
 
   const getPositionFromLocalStorage = () => {
     try {
       return JSON.parse(localStorage.getItem(`latestPosition${app}`) || "");
     } catch (error) {
-      return latestPosition;
+      return { x: 50, y: 50 }
     }
   };
+
+  const [latestPosition, setLatestPosition] = useState({
+    x: getPositionFromLocalStorage().x,
+    y: getPositionFromLocalStorage().y,
+  });
 
   const position = getPositionFromLocalStorage();
   const setPosition = (dragElement: any) => {
