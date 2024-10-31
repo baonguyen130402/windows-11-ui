@@ -45,6 +45,7 @@ export function VSCode(props: any) {
           defaultPosition={inMiniview
             ? { x: 0, y: 0 }
             : { x: position.x, y: position.y }}
+          onDrag={setPosition}
           onStop={setPosition}
         >
           <article

@@ -45,8 +45,9 @@ export function MsEdge(props: any) {
         nodeRef={explorerRef}
         bounds={bounds}
         defaultPosition={inMiniview
-          ? { x: 0, y: 0 }
+          ? { x: 50, y: 50 }
           : { x: position.x, y: position.y }}
+        onDrag={setPosition}
         onStop={setPosition}
       >
         <article

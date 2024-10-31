@@ -54,7 +54,7 @@ export function FileExplorer(props: any) {
           className={clsx(
             "backdrop-filter backdrop-blur-lg rounded-[0.5em] overflow-hidden border border-[#2c3246] absolute",
             {
-              hidden: isMinimize,
+              "hidden": isMinimize,
               "w-screen h-screen rounded-none": isMaximize,
               "block w-[1000px] h-[600px]":
                 isMinimize === false || isMaximize === false,
