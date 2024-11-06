@@ -103,6 +103,6 @@ export const optionsArrangeInToolbar = [
 export const other = {
   dotIcon: <img src={dotIcon} className="size-5" />,
   galleryIcon: <img src={galleryIcon} className="size-5 fill-blue-400 ml-5 mr-1.5" />,
-  networkIcon: <img src={networkIcon} className="size-5 fill-blue-400 mr-1.5" />,
+  networkIcon: <img src={networkIcon} className="size-6 fill-blue-400 mr-1.5" />,
   thisPcIcon: <img src={thisPcIcon} className="size-5 fill-blue-400 mr-1.5" />,
 }
