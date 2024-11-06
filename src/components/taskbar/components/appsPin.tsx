@@ -14,7 +14,7 @@ import { FileExplorerContext } from "../../../lib/contexts/FileExplorerContext";
 
 import { MiniView } from "../../../lib/utilities/miniView";
 import { RenderIf } from "../../../lib/utilities/renderIf";
-import { TriggerAppsFromTaksbar } from "../../../lib/utilities/taskbar";
+import { TriggerAppsFromTaskbar } from "../../../lib/utilities/taskbar";
 import { AppOnTaskbarContextMenu } from "../../../lib/contextMenus/appsOnTaskbar";
 
 export function AppsPin() {
@@ -61,7 +61,7 @@ export function AppsPin() {
     );
   }, [JSON.stringify(appsState)]);
 
-  const { openNewApp, openMinimizedApp } = TriggerAppsFromTaksbar();
+  const { openNewApp, openMinimizedApp } = TriggerAppsFromTaskbar();
 
   return (
     <ul className="flex items-center gap-x-1" ref={parent}>

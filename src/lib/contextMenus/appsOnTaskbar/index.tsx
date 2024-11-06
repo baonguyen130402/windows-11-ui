@@ -8,7 +8,7 @@ import {
 import { Icons } from "../../../lib/icons";
 
 import { RenderIf } from "../../utilities/renderIf";
-import { TriggerAppsFromTaksbar } from "../../utilities/taskbar";
+import { TriggerAppsFromTaskbar } from "../../utilities/taskbar";
 
 export function AppOnTaskbarContextMenu(
   { children, appName, isPinOn }: {
@@ -17,7 +17,7 @@ export function AppOnTaskbarContextMenu(
     isPinOn: boolean;
   },
 ) {
-  const { unpinAndPinApp } = TriggerAppsFromTaksbar();
+  const { unpinAndPinApp } = TriggerAppsFromTaskbar();
 
   return (
     <ContextMenu>
