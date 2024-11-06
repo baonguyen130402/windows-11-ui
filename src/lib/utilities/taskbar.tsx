@@ -5,7 +5,7 @@ import { MzFirefoxContext } from "../contexts/MzFirefoxContext";
 import { FileExplorerContext } from "../contexts/FileExplorerContext";
 import { VSCodeContext } from "../contexts/VsCodeContext";
 
-export function TriggerAppsFromTaksbar() {
+export function TriggerAppsFromTaskbar() {
   const {
     setVSCodeOpening,
     setVsCodeMinimize,
@@ -38,7 +38,7 @@ export function TriggerAppsFromTaksbar() {
     setFileExplorerMinimize,
     setFileExplorerPinOnTaskbar,
     fileExplorerPinOnTaskbar,
-    fileExplorerMinimizie,
+    fileExplorerMinimize,
   } = useContext(
     FileExplorerContext,
   );
@@ -71,7 +71,7 @@ export function TriggerAppsFromTaksbar() {
     }
 
     if (app === "folder") {
-      setFileExplorerMinimize(!fileExplorerMinimizie);
+      setFileExplorerMinimize(!fileExplorerMinimize);
     }
 
     if (app === "vsCode") {
