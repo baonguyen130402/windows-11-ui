@@ -20,7 +20,7 @@ export function Taskbar() {
   const { vsCodeMaximize, vsCodeMinimize } = useContext(VSCodeContext);
   const { msEdgeMaximize, msEdgeMinimize } = useContext(MsEdgeContext);
   const { mzFirefoxMaximize, mzFirefoxMinimize } = useContext(MzFirefoxContext);
-  const { fileExplorerMaximize, fileExplorerMinimizie } = useContext(
+  const { fileExplorerMaximize, fileExplorerMinimize } = useContext(
     FileExplorerContext,
   );
 
@@ -36,18 +36,18 @@ export function Taskbar() {
           "hidden": (msEdgeMaximize && msEdgeMinimize === false) ||
             (vsCodeMaximize && vsCodeMinimize === false) ||
             (mzFirefoxMaximize && mzFirefoxMinimize === false) ||
-            (fileExplorerMaximize && fileExplorerMinimizie === false),
+            (fileExplorerMaximize && fileExplorerMinimize === false),
           "block": msEdgeMaximize === false || mzFirefoxMaximize === false ||
             fileExplorerMaximize === false ||
             (vsCodeMaximize && vsCodeMinimize) ||
             (msEdgeMaximize && msEdgeMinimize) ||
             (mzFirefoxMaximize && mzFirefoxMinimize) ||
-            (fileExplorerMaximize && fileExplorerMinimizie),
+            (fileExplorerMaximize && fileExplorerMinimize),
         },
       )}
     >
       <div className="col-start-1 w-[270px] flex">
-        <Weather />
+        {false && <Weather />}
       </div>
       <div className="flex items-center justify-self-center col-start-2 col-span-2 gap-x-1 relative">
         <HomeBtn openStartMenu={state} setOpenStartMenu={setStateFromChild} />
