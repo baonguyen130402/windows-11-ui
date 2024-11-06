@@ -46,7 +46,7 @@ export function Desktop() {
     <DesktopContextMenu>
       <div className="w-full h-full relative">
         <ul
-          className="w-screen h-[calc(100%-3rem)] bg-transparent grid grid-rows-11 grid-cols-24 gap-y-6 absolute"
+          className="w-screen p-2.5 h-[calc(100%-3rem)] bg-transparent grid grid-rows-11 grid-cols-24 gap-y-6 absolute"
           ref={parent}
         >
           {desktopApps.map((apps: any) => (
