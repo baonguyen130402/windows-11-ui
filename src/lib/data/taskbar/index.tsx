@@ -1,3 +1,9 @@
+import copilotIcon from "/images/apps/copilot.png"
+import firefoxIcon from "/images/apps/firefox.png"
+import edgeIcon from "/images/apps/edge.png"
+import folderIcon from "/images/apps/folder.png"
+import vscodeIcon from "/images/apps/vs-code.ico"
+
 export function generateAppsOnTaskbar(props: any) {
   const { vsCode, msEdge, mzFirefox, fileExplorer } = props;
 
@@ -6,31 +12,31 @@ export function generateAppsOnTaskbar(props: any) {
       title: "copilot",
       isOpen: false,
       isPinOn: true,
-      icon: <img src="/images/apps/copilot.png" />,
+      icon: <img src={copilotIcon} />,
     },
     {
       title: "firefox",
       isOpen: mzFirefox.isOpening,
       isPinOn: mzFirefox.isPinOn,
-      icon: <img src="/images/apps/firefox.png" />,
+      icon: <img src={firefoxIcon} />,
     },
     {
       title: "msEdge",
       isOpen: msEdge.isOpening,
       isPinOn: msEdge.isPinOn,
-      icon: <img src="/images/apps/edge.png" />,
+      icon: <img src={edgeIcon} />,
     },
     {
       title: "folder",
       isOpen: fileExplorer.isOpening,
       isPinOn: fileExplorer.isPinOn,
-      icon: <img src="/images/apps/folder.png" />,
+      icon: <img src={folderIcon} />,
     },
     {
       title: "vsCode",
       isOpen: vsCode.isOpening,
       isPinOn: vsCode.isPinOn,
-      icon: <img src="/images/apps/vs-code.ico" className="size-6" />,
+      icon: <img src={vscodeIcon} className="size-6" />,
     },
   ];
 }
