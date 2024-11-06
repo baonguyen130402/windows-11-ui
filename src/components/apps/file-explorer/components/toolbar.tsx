@@ -1,4 +1,5 @@
 import {
+  other,
   optionsArrangeInToolbar,
   optionsWithFileInToolbar,
 } from "../../../../lib/data/fileExplorer";
@@ -37,7 +38,7 @@ export function Toolbar() {
         ))}
       </ul>
       <div className="flex items-center gap-4 px-4 hover:bg-[#626262] p-2 hover:rounded-[0.25rem] ml-4">
-        <img src="/images/options/dots.png" className="size-5 fill-[#999]" />
+        {other.dotIcon}
       </div>
     </div>
   );

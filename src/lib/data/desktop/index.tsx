@@ -1,8 +1,13 @@
+import firefoxLogo from "/images/apps/firefox.png"
+import msEdgeLogo from "/images/apps/edge.png"
+import vsCodeLogo from "/images/apps/vs-code.ico"
+import folderLogo from "/images/apps/folder.png"
+
 export const appsOnDesktop = [
   {
     icon: (
       <img
-        src="/images/apps/firefox.png"
+        src={firefoxLogo}
         className="size-12 justify-self-center"
       />
     ),
@@ -11,7 +16,7 @@ export const appsOnDesktop = [
   {
     icon: (
       <img
-        src="/images/apps/edge.png"
+        src={msEdgeLogo}
         className="size-12 justify-self-center"
       />
     ),
@@ -20,7 +25,7 @@ export const appsOnDesktop = [
   {
     icon: (
       <img
-        src="/images/apps/folder.png"
+        src={folderLogo}
         className="size-12 justify-self-center"
       />
     ),
@@ -29,7 +34,7 @@ export const appsOnDesktop = [
   {
     icon: (
       <img
-        src="/images/apps/vs-code.ico"
+        src={vsCodeLogo}
         className="size-12 justify-self-center"
       />
     ),

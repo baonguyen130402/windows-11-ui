@@ -6,6 +6,7 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   base: "/windows-11-ui/",
   plugins: [react()],
+  base: "/windows-11-ui/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

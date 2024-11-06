@@ -2,7 +2,7 @@ import { useDragAndDrop } from "@formkit/drag-and-drop/react";
 
 import { Icons } from "../../../../lib/icons";
 import { animations } from "@formkit/drag-and-drop";
-import { defaultAppsInSideBar } from "../../../../lib/data/fileExplorer";
+import { defaultAppsInSideBar, other } from "../../../../lib/data/fileExplorer";
 
 export function Sidebar() {
   const [parent, apps] = useDragAndDrop<HTMLUListElement, any>(
@@ -19,10 +19,7 @@ export function Sidebar() {
         <span className="text-sm font-bold">Home</span>
       </div>
       <div className="flex items-center px-1 py-1">
-        <img
-          src="/images/file-explorer/gallery.png"
-          className="ml-5 size-5 fill-blue-400 mr-1.5"
-        />
+        {other.galleryIcon}
         <span className="text-sm font-medium">Gallery</span>
       </div>
       <ul ref={parent} className="border-b border-t border-gray-700 my-2 py-2">
@@ -41,18 +38,12 @@ export function Sidebar() {
       <div>
         <div className="flex items-center px-1 py-1">
           <Icons.chevronRight className="size-[12px] mr-1.5 " />
-          <img
-            src="/images/file-explorer/Computer.ico"
-            className="size-5 fill-blue-400 mr-1.5"
-          />
+          {other.thisPcIcon}
           <span className="text-sm font-medium">This PC</span>
         </div>
         <div className="flex items-center px-1 py-1">
           <Icons.chevronRight className="size-[12px] mr-1.5 " />
-          <img
-            src="/images/file-explorer/Network.ico"
-            className="size-5 fill-blue-400 mr-1.5"
-          />
+          {other.networkIcon}
           <span className="text-sm font-medium">Network</span>
         </div>
       </div>
