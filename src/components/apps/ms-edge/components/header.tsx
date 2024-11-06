@@ -2,7 +2,7 @@ import { Tab } from "./tab";
 import { Icons } from "../../../../lib/icons";
 import { TriggerAppFormTitleBar } from "../../../../lib/utilities/titleBar";
 
-export function Header(props: any) {
+export function Header() {
   const { closeApp, maximizeApp, minimizeApp } = TriggerAppFormTitleBar(
     "msEdge",
   );
