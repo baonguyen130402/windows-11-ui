@@ -4,7 +4,7 @@ import { getStateFromLocalStorage } from "../helper";
 interface Props {
   fileExplorerOpening: boolean;
   setFileExplorerOpening: (isOpening: boolean) => void;
-  fileExplorerMinimizie: boolean;
+  fileExplorerMinimize: boolean;
   setFileExplorerMinimize: (isMinimize: boolean) => void;
   fileExplorerMaximize: boolean;
   setFileExplorerMaximize: (isMaximize: boolean) => void;
@@ -15,7 +15,7 @@ interface Props {
 export const FileExplorerContext = createContext<Props>({
   fileExplorerOpening: false,
   setFileExplorerOpening: () => { },
-  fileExplorerMinimizie: false,
+  fileExplorerMinimize: false,
   setFileExplorerMinimize: () => { },
   fileExplorerMaximize: false,
   setFileExplorerMaximize: () => { },

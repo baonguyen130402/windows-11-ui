@@ -31,7 +31,7 @@ export function Desktop() {
   const { mzFirefoxOpening, mzFirefoxMinimize, mzFirefoxMaximize } = useContext(
     MzFirefoxContext,
   );
-  const { fileExplorerOpening, fileExplorerMinimizie, fileExplorerMaximize } =
+  const { fileExplorerOpening, fileExplorerMinimize, fileExplorerMaximize } =
     useContext(FileExplorerContext);
 
   const [parent, desktopApps] = useDragAndDrop<HTMLUListElement, any>(
@@ -46,7 +46,7 @@ export function Desktop() {
     <DesktopContextMenu>
       <div className="w-full h-full relative">
         <ul
-          className="w-screen h-[calc(100%-3rem)] bg-transparent p-2.5 grid grid-rows-9 grid-cols-18 gap-y-8 gap-x-2.5 absolute"
+          className="w-screen h-[calc(100%-3rem)] bg-transparent grid grid-rows-11 grid-cols-24 gap-y-6 absolute"
           ref={parent}
         >
           {desktopApps.map((apps: any) => (
@@ -66,7 +66,7 @@ export function Desktop() {
         />
         <FileExplorer
           isOpen={fileExplorerOpening}
-          isMinimize={fileExplorerMinimizie}
+          isMinimize={fileExplorerMinimize}
           isMaximize={fileExplorerMaximize}
         />
         <VSCode
