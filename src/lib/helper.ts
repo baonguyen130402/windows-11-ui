@@ -28,8 +28,8 @@ export function getDateTime() {
 
 export function separateDesktopLayout(
   icons: any = [{ title: "", icon: "" }],
-  row: number = 9,
-  column: number = 18,
+  row: number = 11,
+  column: number = 24,
 ) {
   const { title, icon } = icons;
 
