@@ -29,10 +29,15 @@ export default function MzFirefoxProvider({ children }: { children: any }) {
   const [isOpening, setIsOpen] = useState(
     mzFirefox.isOpening !== undefined ? mzFirefox.isOpening : false,
   );
-  const [isMinimize, setIsMinimize] = useState(false);
-  const [isMaximize, setIsMaximize] = useState(false);
-
-  const [isPinOn, setIsPinOn] = useState(true);
+  const [isMinimize, setIsMinimize] = useState(
+    mzFirefox.isMinimize !== undefined ? mzFirefox.isMinimize : false,
+  );
+  const [isMaximize, setIsMaximize] = useState(
+    mzFirefox.isMaximize !== undefined ? mzFirefox.isMaximize : false,
+  );
+  const [isPinOn, setIsPinOn] = useState(
+    mzFirefox.isPinOn !== undefined ? mzFirefox.isPinOn : true,
+  );
 
   useEffect(() => {
     localStorage.setItem(
