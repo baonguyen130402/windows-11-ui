@@ -4,6 +4,9 @@ import edgeIcon from "/images/apps/edge.png"
 import folderIcon from "/images/apps/folder.png"
 import vscodeIcon from "/images/apps/vs-code.ico"
 
+import wifiIcon from "/images/system/wifi.png"
+import bluetoothIcon from "/images/system/bluetooth.png"
+
 export function generateAppsOnTaskbar(props: any) {
   const { vsCode, msEdge, mzFirefox, fileExplorer } = props;
 
@@ -43,19 +46,19 @@ export function generateAppsOnTaskbar(props: any) {
 
 export const buttonInControlSystem = [
   {
-    icon: <img src="/images/system/wifi.png" className="h-6 w-6" />,
+    icon: <img src={wifiIcon} className="h-6 w-6" />,
     title: "Wifi",
   },
   {
-    icon: <img src="/images/system/bluetooth.png" className="h-6 w-6" />,
+    icon: <img src={bluetoothIcon} className="h-6 w-6" />,
     title: "Bluetooth",
   },
   {
-    icon: <img src="/images/system/wifi.png" className="h-6 w-6" />,
+    icon: <img src={wifiIcon} className="h-6 w-6" />,
     title: "Wifi",
   },
   {
-    icon: <img src="/images/system/wifi.png" className="h-6 w-6" />,
+    icon: <img src={bluetoothIcon} className="h-6 w-6" />,
     title: "Wifi",
   },
 ];
