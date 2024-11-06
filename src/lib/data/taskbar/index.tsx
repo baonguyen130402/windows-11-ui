@@ -6,6 +6,28 @@ import vscodeIcon from "/images/apps/vs-code.ico"
 
 import wifiIcon from "/images/system/wifi.png"
 import bluetoothIcon from "/images/system/bluetooth.png"
+import speakerIcon from "/images/system/speaker.png"
+import batteryIcon from "/images/system/battery.png"
+
+import edgeIconInStartMenu from "/images/startmenu/edge-icon.png"
+import wordIcon from "/images/startmenu/word-icon.png"
+import excelIcon from "/images/startmenu/excel-icon.png"
+import powerpointIcon from "/images/startmenu/powerpoint-icon.png"
+import msOfficeIcon from "/images/startmenu/ms-office.ico"
+import calendarIcon from "/images/startmenu/calendar-icon.png"
+import msStoreIcon from "/images/startmenu/ms-store-icon.png"
+import msPhotoIcon from "/images/startmenu/ms-foto-icon.ico"
+import msVideoIcon from "/images/startmenu/ms-video-icon.ico"
+import paint2dIcon from "/images/startmenu/Paint-2D.ico"
+import paint3dIcon from "/images/startmenu/Paint-3D.ico"
+import whiteboardIcon from "/images/startmenu/Whiteboard.ico"
+import settingIcon from "/images/startmenu/ms-impostazioni-icon.ico"
+import msSkypeIcon from "/images/startmenu/ms-skype.ico"
+import vscodeIconInStartMenu from "/images/startmenu/vs-code.ico"
+import vsIcon from "/images/startmenu/vs-normal.ico"
+import msFolder from "/images/startmenu/ms-file-explorer.ico"
+import terminalIcon from "/images/startmenu/terminal-icon.png"
+import photoFolderIcon from "/images/startmenu/Photos-folder.ico"
 
 export function generateAppsOnTaskbar(props: any) {
   const { vsCode, msEdge, mzFirefox, fileExplorer } = props;
@@ -65,15 +87,15 @@ export const buttonInControlSystem = [
 
 export const iconsInTray = [
   {
-    icon: <img src="/images/system/wifi.png" className="h-5 w-5" />,
+    icon: <img src={wifiIcon} className="h-5 w-5" />,
     title: "wifi",
   },
   {
-    icon: <img src="/images/system/speaker.png" className="h-5 w-5" />,
+    icon: <img src={speakerIcon} className="h-5 w-5" />,
     title: "speaker",
   },
   {
-    icon: <img src="/images/system/battery.png" className="h-5 w-5" />,
+    icon: <img src={batteryIcon} className="h-5 w-5" />,
     title: "battery",
   },
 ];
@@ -82,7 +104,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/edge-icon.png"
+        src={edgeIconInStartMenu}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -91,7 +113,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/word-icon.png"
+        src={wordIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -100,7 +122,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/excel-icon.png"
+        src={excelIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -109,7 +131,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/powerpoint-icon.png"
+        src={powerpointIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -118,7 +140,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/ms-office.ico"
+        src={msOfficeIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -127,7 +149,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/calendar-icon.png"
+        src={calendarIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -136,7 +158,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/ms-store-icon.png"
+        src={msStoreIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -145,7 +167,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/ms-foto-icon.ico"
+        src={msPhotoIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -154,7 +176,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/ms-video-icon.ico"
+        src={msVideoIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -163,7 +185,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/Paint-2D.ico"
+        src={paint2dIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -172,7 +194,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/Paint-3D.ico"
+        src={paint3dIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -181,7 +203,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/Whiteboard.ico"
+        src={whiteboardIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -190,7 +212,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/ms-impostazioni-icon.ico"
+        src={settingIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -199,7 +221,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/ms-skype.ico"
+        src={msSkypeIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -208,7 +230,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/vs-code.ico"
+        src={vscodeIconInStartMenu}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -217,7 +239,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/vs-normal.ico"
+        src={vsIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -226,7 +248,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/ms-file-explorer.ico"
+        src={msFolder}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -235,7 +257,7 @@ export const appsInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/terminal-icon.png"
+        src={terminalIcon}
         className="w-[2.5rem] m-[0.1em]"
       />
     ),
@@ -247,7 +269,7 @@ export const appsRecentOpennedInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/vs-code.ico"
+        src={vscodeIconInStartMenu}
         className="h-[35px] w-auto pl-[1em]"
       />
     ),
@@ -257,7 +279,7 @@ export const appsRecentOpennedInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/vs-normal.ico"
+        src={vsIcon}
         className="h-[35px] w-auto pl-[1em]"
       />
     ),
@@ -267,7 +289,7 @@ export const appsRecentOpennedInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/Photos-folder.ico"
+        src={photoFolderIcon}
         className="h-[35px] w-auto pl-[1em]"
       />
     ),
@@ -277,7 +299,7 @@ export const appsRecentOpennedInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/terminal-icon.png"
+        src={terminalIcon}
         className="h-[35px] w-auto pl-[1em]"
       />
     ),
@@ -287,7 +309,7 @@ export const appsRecentOpennedInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/Whiteboard.ico"
+        src={whiteboardIcon}
         className="h-[35px] w-auto pl-[1em]"
       />
     ),
@@ -297,7 +319,7 @@ export const appsRecentOpennedInStartMenu = [
   {
     icon: (
       <img
-        src="/images/startmenu/word-icon.png"
+        src={wordIcon}
         className="h-[35px] w-auto pl-[1em]"
       />
     ),
