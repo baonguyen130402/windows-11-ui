@@ -19,6 +19,43 @@ import { appsOnDesktop } from "../../lib/data/desktop";
 import { separateDesktopLayout } from "../../lib/helper";
 import { DesktopContextMenu } from "../../lib/contextMenus/desktop";
 
+export function SplitViewMenu() {
+  return (
+    <div className="w-[500px] h-24 bg-[rgba(255,255,255,.15)] backdrop-blur-xl py-2 px-1 mt-12 rounded-xl z-[1000]">
+      <div className="w-full h-full flex justify-around">
+        <div className="h-20 w-28 rounded-[0.35rem] flex justify-between gap-1 overflow-hidden">
+          <div className="w-14 bg-red-50 hover:bg-blue-400 ease-linear transition duration-100"></div>
+          <div className="w-14 bg-red-50 hover:bg-blue-400 ease-linear transition duration-100"></div>
+        </div>
+
+        <div className="h-20 w-28 rounded-[0.35rem] flex justify-between gap-1 overflow-hidden">
+          <div className="w-[60%] bg-red-50 hover:bg-blue-400 ease-linear transition duration-100"></div>
+          <div className="w-[40%] bg-red-50 hover:bg-blue-400 ease-linear transition duration-100"></div>
+        </div>
+        <div className="h-20 w-28 rounded-[0.35rem] flex justify-between gap-1 overflow-hidden">
+          <div className="w-[50%] bg-red-50 hover:bg-blue-400 ease-linear transition duration-100"></div>
+          <div className="w-[50%] flex flex-col gap-1">
+            <div className="bg-red-50 h-[50%] hover:bg-blue-400 ease-linear transition duration-100"></div>
+            <div className="bg-red-50 h-[50%] hover:bg-blue-400 ease-linear transition duration-100"></div>
+          </div>
+        </div>
+        <div className="h-20 w-28 rounded-[0.35rem] flex justify-between gap-1 overflow-hidden">
+          <div className="w-[50%] flex flex-col gap-1">
+            <div className="bg-red-50 h-[50%] hover:bg-blue-400 ease-linear transition duration-100"></div>
+            <div className="bg-red-50 h-[50%] hover:bg-blue-400 ease-linear transition duration-100"></div>
+          </div>
+          <div className="w-[50%] flex flex-col gap-1">
+            <div className="bg-red-50 h-[50%] hover:bg-blue-400 ease-linear transition duration-100"></div>
+            <div className="bg-red-50 h-[50%] hover:bg-blue-400 ease-linear transition duration-100"></div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function Desktop() {
   const apps = separateDesktopLayout(appsOnDesktop);
 
@@ -44,7 +81,8 @@ export function Desktop() {
 
   return (
     <DesktopContextMenu>
-      <div className="w-full h-full relative">
+      <div className="w-full h-full relative flex justify-center items-start">
+        <SplitViewMenu />
         <ul
           className="w-screen p-2.5 h-[calc(100%-3rem)] bg-transparent grid grid-rows-11 grid-cols-24 gap-y-6 absolute"
           ref={parent}
